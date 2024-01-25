@@ -102,7 +102,7 @@
                                                 <th>#</th>
                                                 <th data-toggle="true"> Name</th>
                                                 <th data-hide="phone">Barcode</th>
-                                                <th data-hide="phone">Vendor</th>
+                                                
                                                 <th data-hide="phone">Category</th>
                                                 <th data-hide="phone">Quantity</th>
                                                 <th data-hide="phone">Action</th>
@@ -127,7 +127,7 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->phar_name;?></td>
                                                     <td><?php echo $row->phar_bcode;?></td>
-                                                    <td><?php echo $row->phar_vendor;?></td>
+                                                    
                                                     <td><?php echo $row->phar_cat;?></td>
                                                     <td><?php echo $row->phar_qty;?> Cartons</td>
                                                     <td>

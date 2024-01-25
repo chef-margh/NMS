@@ -9,12 +9,12 @@
             $phar_qty = $_POST['phar_qty'];
             $phar_cat = $_POST['phar_cat'];
             $phar_bcode = $_POST['phar_bcode'];
-            $phar_vendor = $_POST['phar_vendor'];
+            
                 
             //sql to insert captured values
-			$query="INSERT INTO his_pharmaceuticals (phar_name, phar_bcode, phar_desc, phar_qty, phar_cat, phar_vendor) VALUES (?,?,?,?,?,?)";
+			$query="INSERT INTO his_pharmaceuticals (phar_name, phar_bcode, phar_desc, phar_qty, phar_cat) VALUES (?,?,?,?,?,?)";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('ssssss', $phar_name, $phar_bcode, $phar_desc, $phar_qty, $phar_cat, $phar_vendor);
+			$rc=$stmt->bind_param('ssssss', $phar_name, $phar_bcode, $phar_desc, $phar_qty, $phar_cat);
 			$stmt->execute();
 			/*
 			
@@ -115,26 +115,7 @@
                                                     <?php }?>    
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="inputState" class="col-form-label">Pharmaceutical Vendor</label>
-                                                    <select id="inputState" required="required" name="phar_vendor" class="form-control">
-                                                    <?php
-                                                    
-                                                        $ret="SELECT * FROM  his_vendor ORDER BY RAND() "; 
-                                                        //sql code to get to ten docs  randomly
-                                                        $stmt= $mysqli->prepare($ret) ;
-                                                        $stmt->execute() ;//ok
-                                                        $res=$stmt->get_result();
-                                                        $cnt=1;
-                                                        while($row=$res->fetch_object())
-                                                        {
-                                                            //$mysqlDateTime = $row->s_pat_date;
-                                                    ?>
-                                                        <option><?php echo $row->v_name;?></option>
-
-                                                    <?php }?>   
-                                                    </select>
-                                                </div>
+                                                
                                             </div>
                                             <div class="form-group">
                                                     <label for="inputPassword4" class="col-form-label">Pharmaceutical Barcode(EAN-8)</label>

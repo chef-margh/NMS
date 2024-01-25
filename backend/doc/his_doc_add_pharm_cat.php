@@ -5,14 +5,14 @@
 		if(isset($_POST['add_pharmaceutical_category']))
 		{
 			$pharm_cat_name = $_POST['pharm_cat_name'];
-			$pharm_cat_vendor = $_POST['pharm_cat_vendor'];
+			
 			$pharm_cat_desc=$_POST['pharm_cat_desc'];
             
             
             //sql to insert captured values
-			$query="INSERT INTO his_pharmaceuticals_categories (pharm_cat_name, pharm_cat_vendor, pharm_cat_desc) VALUES (?,?,?)";
+			$query="INSERT INTO his_pharmaceuticals_categories (pharm_cat_name, pharm_cat_desc) VALUES (?,?,?)";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sss', $pharm_cat_name, $pharm_cat_vendor, $pharm_cat_desc);
+			$rc=$stmt->bind_param('sss', $pharm_cat_name, $pharm_cat_desc);
 			$stmt->execute();
 			/*
 			
@@ -90,26 +90,7 @@
                                                     <input type="text" required="required" name="pharm_cat_name" class="form-control" id="inputEmail4" >
                                                 </div>
 
-                                                <div class="form-group col-md-6">
-                                                    <label for="inputState" class="col-form-label">Pharmaceutical Vendor</label>
-                                                    <select id="inputState" required="required" name="pharm_cat_vendor" class="form-control">
-                                                    <?php
-                                                    
-                                                        $ret="SELECT * FROM  his_vendor ORDER BY RAND() "; 
-                                                        //sql code to get to ten docs  randomly
-                                                        $stmt= $mysqli->prepare($ret) ;
-                                                        $stmt->execute() ;//ok
-                                                        $res=$stmt->get_result();
-                                                        $cnt=1;
-                                                        while($row=$res->fetch_object())
-                                                        {
-                                                            //$mysqlDateTime = $row->s_pat_date;
-                                                    ?>
-                                                        <option><?php echo $row->v_name;?></option>
-
-                                                    <?php }?>   
-                                                    </select>
-                                                </div>
+                                                
 
                                             </div>
 

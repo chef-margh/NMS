@@ -79,7 +79,7 @@
                                                 <th>#</th>
                                                 <th data-toggle="true">Pharmaceutical Name</th>
                                                 <th data-hide="phone">Pharmaceutical Barcode</th>
-                                                <th data-hide="phone">Pharmaceutical Vendor</th>
+                                             
                                                 <th data-hide="phone">Pharmaceutical Category</th>
                                                 <th data-hide="phone">Pharmaceutical Quantity</th>
                                                 <th data-hide="phone">Action</th>
@@ -104,7 +104,7 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->phar_name;?></td>
                                                     <td><?php echo $row->phar_bcode;?></td>
-                                                    <td><?php echo $row->phar_vendor;?></td>
+                                                   
                                                     <td><?php echo $row->phar_cat;?></td>
                                                     <td><?php echo $row->phar_qty;?> Cartons</td>
 

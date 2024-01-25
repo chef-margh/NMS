@@ -5,14 +5,14 @@
 		if(isset($_POST['update_pharmaceutical_category']))
 		{
 			$pharm_cat_name = $_GET['pharm_cat_name'];
-			$pharm_cat_vendor = $_POST['pharm_cat_vendor'];
+			
 			$pharm_cat_desc=$_POST['pharm_cat_desc'];
             
             
             //sql to update captured values
-			$query="UPDATE  his_pharmaceuticals_categories SET  pharm_cat_vendor=?, pharm_cat_desc=? WHERE pharm_cat_name = ?";
+			$query="UPDATE  his_pharmaceuticals_categories SET  pharm_cat_desc=? WHERE pharm_cat_name = ?";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sss',   $pharm_cat_vendor, $pharm_cat_desc, $pharm_cat_name);
+			$rc=$stmt->bind_param('sss',$pharm_cat_desc, $pharm_cat_name);
 			$stmt->execute();
 			/*
 			
@@ -99,10 +99,7 @@
                                                     <label for="inputEmail4" class="col-form-label">Pharmaceutical Category Name</label>
                                                     <input  type="text" value="<?php echo $row->pharm_cat_name;?>" required="required" name="pharm_cat_name" class="form-control" id="inputEmail4" >
                                                 </div>
-                                                <div class="form-group col-md-12">
-                                                    <label for="inputPassword4" class="col-form-label">Pharmaceutical Category Vendor</label>
-                                                    <input required="required" value="<?php echo $row->pharm_cat_vendor;?>" type="text" name="pharm_cat_vendor" class="form-control"  id="inputPassword4">
-                                                </div>
+                                                
                                             </div>
 
                                             <div class="form-group">

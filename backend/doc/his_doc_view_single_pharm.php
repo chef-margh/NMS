@@ -79,9 +79,7 @@
                                             <div class="col-xl-7">
                                                 <div class="pl-xl-3 mt-3 mt-xl-0">
                                                     <h2 class="mb-3">Pharmaceutical Name : <?php echo $row->phar_name;?></h2>
-                                                    <hr>
-                                                    <h4 class="text-danger">Pharmaceutical Vendor : <?php echo $row->phar_vendor;?></h4>
-                                                    <hr>
+                                                    
                                                     <h4 class="text-danger">Pharmaceutical Quantity : <?php echo $row->phar_qty;?> Cartons</h4>
                                                     <hr>
                                                     <h4 class="text-danger">Pharmaceutical Description</h4>

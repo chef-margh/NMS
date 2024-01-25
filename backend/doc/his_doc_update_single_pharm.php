@@ -9,12 +9,12 @@
             $phar_qty = $_POST['phar_qty'];
             $phar_cat = $_POST['phar_cat'];
             $phar_bcode = $_GET['phar_bcode'];
-            $phar_vendor = $_POST['phar_vendor'];
+           
                 
             //sql to insert captured values
-			$query="UPDATE  his_pharmaceuticals SET phar_name = ?, phar_desc = ?, phar_qty = ?, phar_cat = ?, phar_vendor = ? WHERE phar_bcode = ?";
+			$query="UPDATE  his_pharmaceuticals SET phar_name = ?, phar_desc = ?, phar_qty = ?, phar_cat = ?, WHERE phar_bcode = ?";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('ssssss', $phar_name, $phar_desc, $phar_qty, $phar_cat, $phar_vendor, $phar_bcode);
+			$rc=$stmt->bind_param('ssssss', $phar_name, $phar_desc, $phar_qty, $phar_cat, $phar_bcode);
 			$stmt->execute();
 			/*
 			
@@ -111,10 +111,7 @@
                                                     <textarea required="required"  type="text" class="form-control" name="phar_desc" id="editor"><?php echo $row->phar_desc;?></textarea>
                                                 </div>
                                                 <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                        <label for="inputPassword4" class="col-form-label">Pharmaceutical Vendor</label>
-                                                        <input required="required" type="text" value="<?php echo $row->phar_vendor;?>" name="phar_vendor" class="form-control"  id="inputPassword4">
-                                                </div>
+                                                
                                                 
 
                                                 <div class="form-group col-md-6">
