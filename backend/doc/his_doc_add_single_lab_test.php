@@ -79,11 +79,11 @@
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
                                                 <li class="breadcrumb-item"><a href="his_admin_dashboard.php">Dashboard</a></li>
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Report</a></li>
-                                                <li class="breadcrumb-item active">Add Ailment</li>
+                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
+                                                <li class="breadcrumb-item active">Add Lab Test</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Add Ailment</h4>
+                                        <h4 class="page-title">Add Lab Test</h4>
                                     </div>
                                 </div>
                             </div>     
@@ -136,7 +136,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                        <label for="inputAddress" class="col-form-label">Ailment Report</label>
+                                                        <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
                                                         <textarea required="required"  type="text" class="form-control" name="lab_pat_tests" id="editor"></textarea>
                                                 </div>
 
