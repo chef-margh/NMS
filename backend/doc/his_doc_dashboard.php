@@ -51,30 +51,32 @@
                         <div class="row">
                             <!--Start OutPatients-->
                             <div class="col-md-6 col-xl-4">
-                                <div class="widget-rounded-circle card-box">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="avatar-lg rounded-circle bg-soft-danger border-danger border">
-                                                <i class="fab fa-accessible-icon  font-22 avatar-title text-danger"></i>
+                                <a href="his_doc_view_patients.php">
+                                    <div class="widget-rounded-circle card-box">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-lg rounded-circle bg-soft-danger border-danger border">
+                                                    <i class="fab fa-accessible-icon  font-22 avatar-title text-danger"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="text-right">
-                                                <?php
-                                                    //code for summing up number of out patients 
-                                                    $result ="SELECT count(*) FROM his_patients  ";
-                                                    $stmt = $mysqli->prepare($result);
-                                                    $stmt->execute();
-                                                    $stmt->bind_result($patient);
-                                                    $stmt->fetch();
-                                                    $stmt->close();
-                                                ?>
-                                                <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $patient;?></span></h3>
-                                                <p class="text-muted mb-1 text-truncate">Patients</p>
+                                            <div class="col-6">
+                                                <div class="text-right">
+                                                    <?php
+                                                        //code for summing up number of out patients 
+                                                        $result ="SELECT count(*) FROM his_patients  ";
+                                                        $stmt = $mysqli->prepare($result);
+                                                        $stmt->execute();
+                                                        $stmt->bind_result($patient);
+                                                        $stmt->fetch();
+                                                        $stmt->close();
+                                                    ?>
+                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $patient;?></span></h3>
+                                                    <p class="text-muted mb-1 text-truncate">Students</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div> <!-- end widget-rounded-circle-->
+                                        </div> <!-- end row-->
+                                    </div> <!-- end widget-rounded-circle-->
+                                </a>
                             </div> <!-- end col-->
                             <!--End Out Patients-->
 
@@ -148,7 +150,7 @@
                         <!--Start Vendors-->
                        
                             <div class="col-md-6 col-xl-6">
-                                <a href="his_doc_account.php">
+                                <a href="his_doc_update-account.php">
                                     <div class="widget-rounded-circle card-box">
                                         <div class="row">
                                             <div class="col-6">
@@ -169,28 +171,7 @@
                            <!-- end col--> 
                             <!--End Vendors-->  
 
-                            <!--Start Corporation Assets-->
-                            <div class="col-md-6 col-xl-6">
-                                <a href="his_doc_view_payrolls.php">
-                                    <div class="widget-rounded-circle card-box">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-danger border-danger border">
-                                                    <i class="mdi mdi-flask font-22 avatar-title text-danger"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-right">
-                                                    <h3 class="text-dark mt-1"></span></h3>
-                                                    <p class="text-muted mb-1 text-truncate">My Payroll</p>
-                                                </div>
-                                            </div>
-                                        </div> <!-- end row-->
-                                    </div>
-                                </a>     <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                            <!--End Corporation Assets-->
-                        </div>
+                            
                         
 
                         
@@ -198,7 +179,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="card-box">
-                                    <h4 class="header-title mb-3">Patients</h4>
+                                    <h4 class="header-title mb-3">Students</h4>
 
                                     <div class="table-responsive">
                                         <table class="table table-borderless table-hover table-centered m-0">

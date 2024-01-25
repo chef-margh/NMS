@@ -63,11 +63,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">Manage Patients</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Students</a></li>
+                                            <li class="breadcrumb-item active">Manage Students</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Patient Details</h4>
+                                    <h4 class="page-title">Manage Student Details</h4>
                                 </div>
                             </div>
                         </div>     
@@ -100,10 +100,10 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Patient Address</th>
-                                                <th data-hide="phone">Patient Category</th>
+                                                <th data-toggle="true">Student Name</th>
+                                                <th data-hide="phone">Student Number</th>
+                                                <th data-hide="phone">Student Address</th>
+                                                <th data-hide="phone">Student Category</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>

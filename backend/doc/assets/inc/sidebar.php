@@ -26,7 +26,7 @@
                                 <ul class="nav-second-level" aria-expanded="false">
                                     
                                     <li>
-                                        <a href="his_doc_view_patients.php">View Student</a>
+                                        <a href="his_doc_view_patients.php">View Students</a>
                                     </li>
                                     <li>
                                         <a href="his_doc_manage_patient.php">Manage Student</a>
