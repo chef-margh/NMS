@@ -21,7 +21,7 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-                <?php include("assets/inc/sidebar.php");?>
+            <?php include("assets/inc/sidebar.php");?>
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -40,12 +40,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
-                                            <li class="breadcrumb-item active">Add Laboratory Test</li>
+                                            <li class="breadcrumb-item"><a href="his_doc_dashboard.php">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="his_doc_patient_lab_test.php">Student's Ailments</a></li>
+                                            <li class="breadcrumb-item active">Student's Ailments</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Laboratory Tests</h4>
+                                    <h4 class="page-title">Student's Ailment</h4>
                                 </div>
                             </div>
                         </div>     
@@ -78,12 +78,12 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Patient Address</th>
-                                                <th data-hide="phone">Patient Ailment</th>
-                                                <th data-hide="phone">Patient Age</th>
-                                                <th data-hide="phone">Patient Category</th>
+                                                <th data-toggle="true">Student Name</th>
+                                                <th data-hide="phone">Student Number</th>
+                                                <th data-hide="phone">Student Address</th>
+                                                <th data-hide="phone">Student Ailment</th>
+                                                <th data-hide="phone">Student Age</th>
+                                                <th data-hide="phone">Student Category</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -112,7 +112,7 @@
                                                     <td><?php echo $row->pat_age;?> Years</td>
                                                     <td><?php echo $row->pat_type;?></td>
                                                     
-                                                    <td><a href="his_doc_add_single_lab_test.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Add Lab Test</a></td>
+                                                    <td><a href="his_doc_add_single_lab_test.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Add Ailment</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

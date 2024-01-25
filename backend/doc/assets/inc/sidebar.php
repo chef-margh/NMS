@@ -65,15 +65,7 @@
                                         <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
                                     </li>
                                     <hr>
-                                    <li>
-                                        <a href="his_doc_add_presc.php">Add Prescriptions</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_view_presc.php">View Prescriptions</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_manage_presc.php">Manage Prescriptions</a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
 
@@ -100,7 +92,7 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-flask"></i>
-                                    <span> Laboratory </span>
+                                    <span> Report </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -108,7 +100,7 @@
                                         <a href="his_doc_patient_lab_test.php">Student Ailment</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_lab_result.php">Medicine Given</a>
+                                        <a href="his_doc_patient_lab_result.php">Treatment Given</a>
                                     </li>
                                     
                                     

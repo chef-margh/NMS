@@ -40,12 +40,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
-                                            <li class="breadcrumb-item active">Add Laboratory Result</li>
+                                            <li class="breadcrumb-item"><a href="his_doc_dashboard.php">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="his_doc_patient_lab_result.php">Treatment Given</a></li>
+                                            <li class="breadcrumb-item active">Add Treatment Report</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Patient Details</h4>
+                                    <h4 class="page-title">Treatment Given</h4>
                                 </div>
                             </div>
                         </div>     
@@ -78,10 +78,10 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Patient Ailment</th>
-                                                <th data-hide="phone">Date Lab Test Conducted</th>
+                                                <th data-toggle="true">Student Name</th>
+                                                <th data-hide="phone">Student Number</th>
+                                                <th data-hide="phone">Student Ailment</th>
+                                                <th data-hide="phone">Date of Report</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -108,7 +108,7 @@
                                                     <td><?php echo $row->lab_pat_number;?></td>
                                                     <td><?php echo $row->lab_pat_ailment;?></td>
                                                     <td><?php echo date("d/m/Y", strtotime($mysqlDateTime));?></td>
-                                                    <td><a href="his_doc_add_single_lab_result.php?lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-flask"></i> Add Lab Result</a></td>
+                                                    <td><a href="his_doc_add_single_lab_result.php?lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-flask"></i> Add Treatment Report</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>
