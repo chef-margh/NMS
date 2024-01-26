@@ -144,24 +144,24 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_doc_patient_lab_test.php">Student Ailment</a>
+                                        <a href="his_admin_patient_lab_test.php">Student Ailment</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_lab_result.php">Treatment Given</a>
+                                        <a href="his_admin_patient_lab_result.php">Treatment Given</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_lab_vitals.php">Incident Report</a>
+                                        <a href="his_admin_patient_lab_vitals.php">Incident Report</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="his_doc_lab_report.php">Lab Reports</a>
+                                        <a href="his_admin_lab_report.php">Lab Reports</a>
                                     </li>
                                     <hr>
                                     <li>
-                                        <a href="his_doc_add_lab_equipment.php">Add Lab Equipment</a>
+                                        <a href="his_admin_add_lab_equipment.php">Add Lab Equipment</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_lab_equipment.php">Manage Lab Equipments</a>
+                                        <a href="his_admin_manage_lab_equipment.php">Manage Lab Equipments</a>
                                     </li>
                                 </ul>
                             </li>
@@ -177,7 +177,7 @@
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li>
-                                <a href="his_doc_manage_password_resets.php">Manage</a>
+                                <a href="his_admin_manage_password_resets.php">Manage</a>
                             </li>
                         </ul>
                     </li>
