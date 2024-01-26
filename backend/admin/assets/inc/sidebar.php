@@ -74,6 +74,43 @@
                     </li>
 
                     <li>
+                                <a href="javascript: void(0);">
+                                    <i class="mdi mdi-pill"></i>
+                                    <span> Pharmacy </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="his_admin_add_pharm_cat.php">Add Pharm Category</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_view_pharm_cat.php">View Pharm Category</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_manage_pharm_cat.php">Manage Pharm Category</a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <a href="his_admin_add_pharmaceuticals.php">Add Pharmaceuticals</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_view_pharmaceuticals.php">View Pharmaceuticals</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
+                                    </li>
+                                    <hr>
+                                 
+
+                          
+                                    <hr>
+                                    
+                                    
+                                </ul>
+                            </li>
+                            <li>
+
+                    <li>
                         <a href="javascript: void(0);">
                             <i class="fas fa-lock"></i>
                             <span> Password Resets </span>
