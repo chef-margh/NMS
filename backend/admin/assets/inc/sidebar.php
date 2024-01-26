@@ -112,7 +112,61 @@
                                    
                                     <li>
                                         <a href="his_admin_pharm_inventory.php">Pharmaceuticals</a>
+                                        <li>
+                                        <a href="his_admin_equipments_inventory.php">Assets</a>
                                     </li>
+                                    
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-file-text"></i>
+                                    <span> Medical Records </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="his_admin_add_medical_record.php">Add Medical Record</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_manage_medical_record.php">Manage Medical Records</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="mdi mdi-flask"></i>
+                                    <span> Report </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="his_admin_patient_lab_test.php">Student Ailment</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_patient_lab_result.php">Treatment Given</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_patient_lab_vitals.php">Incident Report</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="his_admin_lab_report.php">Lab Reports</a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <a href="his_admin_add_lab_equipment.php">Add Lab Equipment</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_manage_lab_equipment.php">Manage Lab Equipments</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                    
                     
 
                     <li>
