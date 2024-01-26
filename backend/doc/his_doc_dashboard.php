@@ -81,36 +81,7 @@
                             <!--End Out Patients-->
 
 
-                            <!--Start InPatients-->
-                            <div class="col-md-6 col-xl-4">
-                                <div class="widget-rounded-circle card-box">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="avatar-lg rounded-circle bg-soft-danger border-danger border">
-                                                <i class="mdi mdi-flask font-22 avatar-title text-danger"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="text-right">
-                                                <?php
-                                                    /* 
-                                                     * code for summing up number of assets,
-                                                     */ 
-                                                    $result ="SELECT count(*) FROM his_equipments ";
-                                                    $stmt = $mysqli->prepare($result);
-                                                    $stmt->execute();
-                                                    $stmt->bind_result($assets);
-                                                    $stmt->fetch();
-                                                    $stmt->close();
-                                                ?>
-                                                <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $assets;?></span></h3>
-                                                <p class="text-muted mb-1 text-truncate">Corporation Assets</p>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div> <!-- end widget-rounded-circle-->
-                            </div>
-                            <!--End InPatients-->
+                            
 
                             <!--Start Pharmaceuticals-->
                             <div class="col-md-6 col-xl-4">
