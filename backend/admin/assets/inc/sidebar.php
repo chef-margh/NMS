@@ -140,7 +140,7 @@
                                         <a href="his_admin_patient_lab_test.php">Student Ailment</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_patient_lab_result.php">Treatment Givens</a>
+                                        <a href="his_admin_patient_lab_result.php">Treatment Given</a>
                                     </li>
                                     <li>
                                         <a href="his_admin_patient_lab_vitals.php">Incident Report</a>
