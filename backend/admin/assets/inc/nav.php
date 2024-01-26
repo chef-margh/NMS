@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $aid = $_SESSION['ad_id'];
 $ret = "SELECT * FROM his_admin WHERE ad_id=?";
