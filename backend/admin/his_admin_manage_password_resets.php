@@ -129,7 +129,7 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->email;?></td>
                                                     <td><?php echo $row->token;?></td>
-                                                    <td><?php echo date('d-M-Y h:m'), strtotime($requestedtime);?></td>
+                                                    <td><?php echo date('d-M-Y h:m', strtotime($requestedtime));?></td>
                                                     <?php echo $action;?>
                                                 </tr>
                                                 </tbody>
