@@ -118,6 +118,19 @@
                             <!--End Pharmaceuticals-->
 
                         </div>
+
+                        <!-- Banner Area Starts -->
+    <section class="banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h4>Educate to Innovate!</h4>
+                    <h1>Together we can do great things</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
                         
 
                         
