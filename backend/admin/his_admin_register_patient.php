@@ -26,30 +26,32 @@ if (isset($_POST['add_patient'])) {
         $pat_phone = $_POST['pat_phone'];
         $pat_phone2 = $_POST['pat_phone2'];
 
-        // SQL to insert captured values
-        $query = "INSERT INTO his_patients (pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_phone2) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $mysqli->prepare($query);
+        
+   // SQL to insert captured values
+$query = "INSERT INTO his_patients (pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_phone2) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$stmt = $mysqli->prepare($query);
 
-        // Check for binding errors
-        if ($stmt === false) {
-            $err = "Error: " . $mysqli->error;
+// Check for binding errors
+if ($stmt === false) {
+    $err = "Error: " . $mysqli->error;
+} else {
+    // Bind parameters
+    $rc = $stmt->bind_param('sssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_phone2);
+
+    // Check if binding was successful
+    if ($rc) {
+        // Execute the statement
+        if ($stmt->execute()) {
+            $success = "Student Details Added";
         } else {
-        // Bind parameters
-         $rc = $stmt->bind_param('sssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_phone2);
-
-         // Check if binding was successful
-         if ($rc) {
-             // Execute the statement
-             if ($stmt->execute()) {
-                 $success = "Student Details Added";
-             } else {
             $err = "Error executing statement: " . $stmt->error;
         }
-        } else {
-            $err = "Error binding parameters: " . $stmt->error;
-        }
+    } else {
+        $err = "Error binding parameters: " . $stmt->error;
+    }
 }
 
+?>
 
 <!--End Server Side-->
 <!--End Patient Registration-->
