@@ -1,4 +1,5 @@
 <?php
+
     $aid = $_SESSION['ad_id'];
     $ret = "SELECT * FROM his_admin WHERE ad_id=?";
     $stmt = $mysqli->prepare($ret);
@@ -37,32 +38,14 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <!-- item-->
-                    <div class="dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">Welcome !</h6>
-                    </div>
-
-                    <!-- item-->
-                    <!-- <a href="his_admin_account.php" class="dropdown-item notify-item">
-                        <i class="fas fa-user"></i>
-                        <span>My Account</span>
-                    </a> -->
-
-                    <a href="his_admin_update-account.php" class="dropdown-item notify-item">
-                        <i class="fas fa-user-tag"></i>
-                        <span>Update Account</span>
-                    </a>
-
-
-                    <div class="dropdown-divider"></div>
-
-                    <!-- item-->
                     <a href="his_admin_logout_partial.php" class="dropdown-item notify-item">
                         <i class="fe-log-out"></i>
                         <span>Logout</span>
                     </a>
-
                 </div>
             </li>
+
+        </ul>
 
         <!-- LOGO -->
         <div class="logo-box">
