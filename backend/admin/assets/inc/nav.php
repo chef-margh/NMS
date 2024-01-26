@@ -93,7 +93,7 @@
                     <!-- item-->
                     <a href="his_admin_add_employee.php" class="dropdown-item">
                         <i class="fe-users mr-1"></i>
-                        <span>Employee</span>
+                        <span>Nurse</span>
                     </a>
 
                     <!-- item-->
@@ -102,11 +102,21 @@
                         <span>Student</span>
                     </a>
 
+                    
+
                     <!-- item-->
                     <a href="his_admin_add_medical_record.php" class="dropdown-item">
                         <i class="fe-list mr-1"></i>
                         <span>Medical Report</span>
                     </a>
+
+                    <!-- item-->
+                    <a href="his_admin_lab_report.php" class="dropdown-item">
+                        <i class="fe-hard-drive mr-1"></i>
+                        <span>Laboratory Report</span>
+                    </a>
+
+                   
 
                     
                     <div class="dropdown-divider"></div>
