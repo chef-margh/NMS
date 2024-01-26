@@ -28,7 +28,7 @@
                     <li class="menu-title">Navigation</li>
                     
                     <li>
-                        <a href="his_doc_dashboard.php">
+                        <a href="his_admin_dashboard.php">
                             <i class="fe-airplay"></i>
                             <span> Home </span>
                         </a>
@@ -42,13 +42,13 @@
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li>
-                                <a href="his_doc_register_patient.php">Register Student</a>
+                                <a href="his_admin_register_patient.php">Register Student</a>
                             </li>
                             <li>
-                                <a href="his_doc_view_patients.php">View Students</a>
+                                <a href="his_admin_view_patients.php">View Students</a>
                             </li>
                             <li>
-                                <a href="his_doc_manage_patient.php">Manage Students</a>
+                                <a href="his_admin_manage_patient.php">Manage Students</a>
                             </li>
                         </ul>
                     </li>
@@ -61,13 +61,13 @@
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li>
-                                <a href="his_doc_add_employee.php">Add Nurse</a>
+                                <a href="his_admin_add_employee.php">Add Nurse</a>
                             </li>
                             <li>
-                                <a href="his_doc_view_employee.php">View Nurses</a>
+                                <a href="his_admin_view_employee.php">View Nurses</a>
                             </li>
                             <li>
-                                <a href="his_doc_manage_employee.php">Manage Nurses</a>
+                                <a href="his_admin_manage_employee.php">Manage Nurses</a>
                             </li>
                         </ul>
                                   
@@ -81,23 +81,23 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_doc_add_pharm_cat.php">Add Pharm Category</a>
+                                        <a href="his_admin_add_pharm_cat.php">Add Pharm Category</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_view_pharm_cat.php">View Pharm Category</a>
+                                        <a href="his_admin_view_pharm_cat.php">View Pharm Category</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_pharm_cat.php">Manage Pharm Category</a>
+                                        <a href="his_admin_manage_pharm_cat.php">Manage Pharm Category</a>
                                     </li>
                                     <hr>
                                     <li>
-                                        <a href="his_doc_add_pharmaceuticals.php">Add Pharmaceuticals</a>
+                                        <a href="his_admin_add_pharmaceuticals.php">Add Pharmaceuticals</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_view_pharmaceuticals.php">View Pharmaceuticals</a>
+                                        <a href="his_admin_view_pharmaceuticals.php">View Pharmaceuticals</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
+                                        <a href="his_admin_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
                                     </li>
                                     <hr>
                                     </li>
@@ -111,9 +111,9 @@
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
                                     <li>
-                                        <a href="his_doc_pharm_inventory.php">Pharmaceuticals</a>
+                                        <a href="his_admin_pharm_inventory.php">Pharmaceuticals</a>
                                         <li>
-                                        <a href="his_doc_equipments_inventory.php">Assets</a>
+                                        <a href="his_admin_equipments_inventory.php">Assets</a>
                                     </li>
                                     
                                 </ul>
@@ -127,10 +127,10 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_doc_add_medical_record.php">Add Medical Record</a>
+                                        <a href="his_admin_add_medical_record.php">Add Medical Record</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_medical_record.php">Manage Medical Records</a>
+                                        <a href="his_admin_manage_medical_record.php">Manage Medical Records</a>
                                     </li>
                                     
                                 </ul>
