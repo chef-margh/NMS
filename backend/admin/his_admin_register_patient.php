@@ -8,13 +8,14 @@ $success = $err = '';
 if (isset($_POST['add_patient'])) {
     // Validate form data
     if (
-        isset($_POST['pat_fname'], $_POST['pat_lname'], $_POST['pat_dob'], $_POST['pat_age'], $_POST['pat_number'], $_POST['pat_phone'])
+        isset($_POST['pat_fname'], $_POST['pat_lname'], $_POST['pat_dob'], $_POST['pat_age'], $_POST['pat_number'], $_POST['pat_phone'], $_POST['pat_phone2'])
         && !empty($_POST['pat_fname'])
         && !empty($_POST['pat_lname'])
         && !empty($_POST['pat_dob'])
         && !empty($_POST['pat_age'])
         && !empty($_POST['pat_number'])
         && !empty($_POST['pat_phone'])
+        && !empty($_POST['pat_phone2'])
     ) {
         // Sanitize input data
         $pat_fname = $_POST['pat_fname'];
@@ -23,15 +24,13 @@ if (isset($_POST['add_patient'])) {
         $pat_age = $_POST['pat_age'];
         $pat_number = $_POST['pat_number'];
         $pat_phone = $_POST['pat_phone'];
+        $pat_phone2 = $_POST['pat_phone2'];
 
-        // Additional fields
-        $pat_type = ''; // Add appropriate value
-        $pat_addr = ''; // Add appropriate value
-
+        
         // SQL to insert captured values
-        $query = "INSERT INTO his_patients (pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_type, pat_addr) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO his_patients (pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_phone2) VALUES (?, ?, ?, ?, ?,?,?,?)";
         $stmt = $mysqli->prepare($query);
-        $rc = $stmt->bind_param('ssssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_type, $pat_addr);
+        $rc = $stmt->bind_param('sssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone2);
 
         if ($stmt->execute()) {
             $success = "Student Details Added";
@@ -123,16 +122,27 @@ if (isset($_POST['add_patient'])) {
                                                 <input required="required" type="text" name="pat_age" class="form-control" id="inputPassword4"
                                                     placeholder="Student`s Age">
                                             </div>
+                                            <div class="form-group col-md-6" >
+                                            <label for="inputZip" class="col-form-label">Student Roll Number</label>
+                                            <input type="text" name="pat_number" class="form-control" id="inputEmail4" placeholder = "Student's Roll Number">
+                                            </div>
+
+                                            <div class="form-group col-md-6" >
+                                            <label for="inputZip" class="col-form-label">Guardian1's Phone number</label>
+                                            <input type="text" name="pat_phone" class="form-control" id="inputZip">
+                                            </div>
+
+                                            <div class="form-group col-md-6" >
+                                            <label for="inputZip" class="col-form-label">Guardian2's Phone number</label>
+                                            <input type="text" name="pat_phone2" class="form-control" id="inputZip" >
+                                            </div>
+
+                                            
+
+                                        
                                         </div>
 
-                                        <div class="form-group col-md-2" style="display:none">
-                                            <?php
-                                            $length = 5;
-                                            $patient_number = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 1, $length);
-                                            ?>
-                                            <label for="inputZip" class="col-form-label">Student Number</label>
-                                            <input type="text" name="pat_number" value="<?php echo $patient_number; ?>" class="form-control" id="inputZip">
-                                        </div>
+                                        
                                         </div>
 
                                         <button type="submit" name="add_patient" class="ladda-button btn btn-primary" data-style="expand-right">Add Student</button>
