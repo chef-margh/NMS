@@ -24,17 +24,14 @@
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    
                                     <li>
                                         <a href="his_doc_view_patients.php">View Students</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_patient.php">Manage Student</a>
+                                        <a href="his_doc_manage_patient.php">Manage Students</a>
                                     </li>
                                     <hr>
-                                   
-                                </ul>
-                            </li>
+                                    
 
                           
 
@@ -65,7 +62,15 @@
                                         <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
                                     </li>
                                     <hr>
-                                    
+                                    <li>
+                                        <a href="his_doc_add_presc.php">Add Prescriptions</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_view_presc.php">View Prescriptions</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_manage_presc.php">Manage Prescriptions</a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -92,26 +97,29 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-flask"></i>
-                                    <span> Report </span>
+                                    <span> Laboratory </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_doc_patient_lab_test.php">Student Ailment</a>
+                                        <a href="his_doc_patient_lab_test.php">Patient Lab Tests</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_lab_result.php">Treatment Given</a>
+                                        <a href="his_doc_patient_lab_result.php">Patient Lab Results</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_patient_lab_vitals.php">Patient Vitals</a>
                                     </li>
                                     
-                                    
                                     <li>
-                                        <a href="his_doc_lab_report.php">Incident Report</a>
+                                        <a href="his_doc_lab_report.php">Lab Reports</a>
                                     </li>
                                     <hr>
                                     
                                 </ul>
                             </li>
 
+                            
 
                             
 

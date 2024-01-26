@@ -12,7 +12,7 @@
                             <li>
                                 <a href="his_admin_dashboard.php">
                                     <i class="fe-airplay"></i>
-                                    <span> Dashboard </span>
+                                    <span> Home </span>
                                 </a>
                                 
                             </li>
@@ -31,17 +31,17 @@
                                         <a href="his_admin_view_patients.php">View Students</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_manage_patient.php">Manage Students</a>
+                                        <a href="his_admin_manage_patient.php">ManageStudents</a>
                                     </li>
                                     <hr>
-                                  
+                                   
                                 </ul>
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-doctor"></i>
-                                    <span> Nurse's </span>
+                                    <span> Nurses </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -49,19 +49,49 @@
                                         <a href="his_admin_add_employee.php">Add Nurse</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_view_employee.php">View Nurse's</a>
+                                        <a href="his_admin_view_employee.php">View Nurses</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_manage_employee.php">Manage Nurse's</a>
+                                        <a href="his_admin_manage_employee.php">Manage Nurses</a>
+                                    </li>
+                                  
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="mdi mdi-pill"></i>
+                                    <span> Pharmacy </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="his_admin_add_pharm_cat.php">Add Pharm Category</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_view_pharm_cat.php">View Pharm Category</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_manage_pharm_cat.php">Manage Pharm Category</a>
                                     </li>
                                     <hr>
+                                    <li>
+                                        <a href="his_admin_add_pharmaceuticals.php">Add Pharmaceuticals</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_view_pharmaceuticals.php">View Pharmaceuticals</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
+                                    </li>
+                                    <hr>
+                                 
+
+                          
+                                    <hr>
+                                    
                                     
                                 </ul>
                             </li>
-
-                          
-
-                      
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class=" fas fa-funnel-dollar "></i>
@@ -81,34 +111,6 @@
                                 </ul>
                             </li>
                 
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class="fe-share"></i>
-                                    <span> Reporting </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="his_admin_inpatient_records.php">InPatient Records</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_admin_outpatient_records.php">OutPatient Records</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_admin_employee_records.php">Employee Records</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_admin_pharmaceutical_records.php">Pharmaceutical Records</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_admin_accounting_records.php">Accounting Records</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_admin_medical_records.php">Medical Records</a>
-                                    </li>
-                                    
-                                </ul>
-                            </li>
 
                             <li>
                                 <a href="javascript: void(0);">
@@ -130,7 +132,7 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-flask"></i>
-                                    <span> Laboratory </span>
+                                    <span> Report </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -138,20 +140,29 @@
                                         <a href="his_admin_patient_lab_test.php">Student Ailment</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_patient_lab_result.php">Medicine Given</a>
+                                        <a href="his_admin_patient_lab_result.php">Treatment Givens</a>
                                     </li>
-
+                                    <li>
+                                        <a href="his_admin_patient_lab_vitals.php">Incident Report</a>
+                                    </li>
                                     
                                     <li>
-                                        <a href="his_admin_lab_report.php">Incident Reports</a>
+                                        <a href="his_admin_lab_report.php">Lab Reports</a>
                                     </li>
                                     <hr>
                                     <li>
-                                    
+                                        <a href="his_admin_add_lab_equipment.php">Add Lab Equipment</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_manage_lab_equipment.php">Manage Lab Equipments</a>
+                                    </li>
                                 </ul>
                             </li>
 
-                          
+              
+                                    
+                                </ul>
+                            </li>
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fas fa-lock"></i>
