@@ -4,6 +4,8 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
+ 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +41,7 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title">Hospital Management System Dashboard</h4>
+                                    <h4 class="page-title"> Nurse's Management System</h4>
                                 </div>
                             </div>
                         </div>     
@@ -47,64 +49,7 @@
                         
 
                         <div class="row">
-                            <!--Start OutPatients-->
-                            <div class="col-md-6 col-xl-4">
-                                <div class="widget-rounded-circle card-box">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
-                                                <i class="fab fa-accessible-icon  font-22 avatar-title text-primary"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="text-right">
-                                                <?php
-                                                    //code for summing up number of out patients 
-                                                    $result ="SELECT count(*) FROM his_patients WHERE pat_type = 'OutPatient' ";
-                                                    $stmt = $mysqli->prepare($result);
-                                                    $stmt->execute();
-                                                    $stmt->bind_result($outpatient);
-                                                    $stmt->fetch();
-                                                    $stmt->close();
-                                                ?>
-                                                <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $outpatient;?></span></h3>
-                                                <p class="text-muted mb-1 text-truncate">Out Patients</p>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                            <!--End Out Patients-->
-
-
-                            <!--Start InPatients-->
-                            <div class="col-md-6 col-xl-4">
-                                <div class="widget-rounded-circle card-box">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
-                                                <i class="mdi mdi-hotel   font-22 avatar-title text-primary"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="text-right">
-                                                <?php
-                                                    //code for summing up number of in / admitted  patients 
-                                                    $result ="SELECT count(*) FROM his_patients WHERE pat_type = 'InPatient' ";
-                                                    $stmt = $mysqli->prepare($result);
-                                                    $stmt->execute();
-                                                    $stmt->bind_result($inpatient);
-                                                    $stmt->fetch();
-                                                    $stmt->close();
-                                                ?>
-                                                <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $inpatient;?></span></h3>
-                                                <p class="text-muted mb-1 text-truncate">In Patients</p>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                            <!--End InPatients-->
+                        
 
                             <!--Start Employees-->
                             <div class="col-md-6 col-xl-4">
@@ -127,7 +72,7 @@
                                                     $stmt->close();
                                                 ?>
                                                 <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $doc;?></span></h3>
-                                                <p class="text-muted mb-1 text-truncate">Hospital Employees</p>
+                                                <p class="text-muted mb-1 text-truncate">Nurse's</p>
                                             </div>
                                         </div>
                                     </div> <!-- end row-->
@@ -139,67 +84,7 @@
 
                         <div class="row">
 
-                        <!--Start Vendors-->
-                            <div class="col-md-6 col-xl-4">
-                                <div class="widget-rounded-circle card-box">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
-                                                <i class="fas fa-user-tag font-22 avatar-title text-primary"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="text-right">
-                                                <?php
-                                                    /*code for summing up number of vendors whom supply eqipments, 
-                                                     *pharms or any other equipments
-                                                     */ 
-                                                    $result ="SELECT count(*) FROM his_vendor ";
-                                                    $stmt = $mysqli->prepare($result);
-                                                    $stmt->execute();
-                                                    $stmt->bind_result($vendor);
-                                                    $stmt->fetch();
-                                                    $stmt->close();
-                                                ?>
-                                                <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $vendor;?></span></h3>
-                                                <p class="text-muted mb-1 text-truncate">Vendors</p>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col--> 
-                            <!--End Vendors-->  
-
-                            <!--Start Corporation Assets-->
-                            <div class="col-md-6 col-xl-4">
-                                <div class="widget-rounded-circle card-box">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
-                                                <i class="mdi mdi-flask font-22 avatar-title text-primary"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="text-right">
-                                                <?php
-                                                    /* 
-                                                     * code for summing up number of assets,
-                                                     */ 
-                                                    $result ="SELECT count(*) FROM his_equipments ";
-                                                    $stmt = $mysqli->prepare($result);
-                                                    $stmt->execute();
-                                                    $stmt->bind_result($assets);
-                                                    $stmt->fetch();
-                                                    $stmt->close();
-                                                ?>
-                                                <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $assets;?></span></h3>
-                                                <p class="text-muted mb-1 text-truncate">Corporation Assets</p>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                            <!--End Corporation Assets-->
+                        
 
                             <!--Start Pharmaceuticals-->
                             <div class="col-md-6 col-xl-4">
@@ -240,7 +125,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="card-box">
-                                    <h4 class="header-title mb-3">Hospital Employees</h4>
+                                    <h4 class="header-title mb-3">Nurse's</h4>
 
                                     <div class="table-responsive">
                                         <table class="table table-borderless table-hover table-centered m-0">
