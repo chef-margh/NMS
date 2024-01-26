@@ -101,6 +101,7 @@
                                     </li>
                                     <hr>
                                     </li>
+                                    </ul>
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class=" fas fa-funnel-dollar "></i>
