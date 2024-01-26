@@ -175,6 +175,7 @@ CREATE TABLE `his_patients` (
   `pat_number` varchar(200) DEFAULT NULL,
   
   `pat_phone` varchar(200) DEFAULT NULL,
+  'pat_phone2'varchar(200) DEFAULT NULL,
   
   
  
@@ -184,12 +185,6 @@ CREATE TABLE `his_patients` (
 -- Dumping data for table `his_patients`
 --
 
-INSERT INTO `his_patients` (`pat_id`, `pat_fname`, `pat_lname`, `pat_dob`, `pat_age`, `pat_number`, `pat_phone`, ) VALUES
-(8, 'Michael', 'White', '02/02/1992', '30', 'DCRI8', '1458887854',  ),
-(9, 'Lawrence', 'Bischof', '01/19/1990', '32', 'ISL1E', '7412225698', ),
-(10, 'Cynthia', 'Connolly', '10/11/2000', '22', '3Z14K', '1478885458',  ),
-(11, 'Helen', 'Macdougall', '01/01/1980', '42', 'KU8W4', '1458889655',  ),
-(12, 'Christine', 'Moore', '11/06/1994', '28', '4TLG0','7412569698',  );
 
 -- --------------------------------------------------------
 --
