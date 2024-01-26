@@ -165,7 +165,6 @@ CREATE TABLE `his_patients` (
   `pat_dob` varchar(200) DEFAULT NULL,
   `pat_age` varchar(200) DEFAULT NULL,
   `pat_number` varchar(200) DEFAULT NULL,
-  
   `pat_phone` varchar(200) DEFAULT NULL,
   'pat_phone2'varchar(200) DEFAULT NULL,
   

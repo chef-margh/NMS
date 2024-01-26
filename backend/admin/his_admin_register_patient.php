@@ -18,6 +18,7 @@ if (isset($_POST['add_patient'])) {
         && !empty($_POST['pat_phone2'])
     ) {
         // Sanitize input data
+        $pat_id = $_POST['pat_id'];
         $pat_fname = $_POST['pat_fname'];
         $pat_lname = $_POST['pat_lname'];
         $pat_dob = $_POST['pat_dob'];
@@ -28,10 +29,9 @@ if (isset($_POST['add_patient'])) {
 
         
         // SQL to insert captured values
-        $query = "INSERT INTO his_patients (pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_phone2) VALUES (?, ?, ?, ?,?,?,?)";
+        $query = "INSERT INTO his_patients (pat_id, pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_phone2) VALUES (?, ?, ?, ?,?,?,?,?)";
         $stmt = $mysqli->prepare($query);
-        $rc = $stmt->bind_param('sssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_phone2);
-        $stmt->execute();
+        $rc = $stmt->bind_param('ssssssss',$pat_id, $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_phone2);
 
         if ($stmt->execute()) {
             $success = "Student Details Added";
