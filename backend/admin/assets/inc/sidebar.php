@@ -100,15 +100,19 @@
                                         <a href="his_admin_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
                                     </li>
                                     <hr>
-                                 
-
-                          
-                                    <hr>
-                                    
-                                    
-                                </ul>
-                            </li>
+                                    </li>
                             <li>
+                                <a href="javascript: void(0);">
+                                    <i class=" fas fa-funnel-dollar "></i>
+                                    <span> Inventory </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                   
+                                    <li>
+                                        <a href="his_admin_pharm_inventory.php">Pharmaceuticals</a>
+                                    </li>
+                    
 
                     <li>
                         <a href="javascript: void(0);">
