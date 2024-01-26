@@ -158,10 +158,9 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th>Name</th>
-                                                    <th>Address</th>
+                                                    
                                                     <th>Mobile Phone</th>
-                                                    <th>Category</th>
-                                                    <th>Ailment</th>
+                                                    
                                                     <th>Age</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -182,18 +181,12 @@
                                                     <td>
                                                         <?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>
                                                     </td>
-                                                    <td>
-                                                        <?php echo $row->pat_addr;?>
-                                                    </td>    
+                                                     
                                                     <td>
                                                         <?php echo $row->pat_phone;?>
                                                     </td>
-                                                    <td>
-                                                        <?php echo $row->pat_type;?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row->pat_ailment;?>
-                                                    </td>
+                                                    
+                                                    
                                                     <td>
                                                         <?php echo $row->pat_age;?> Years
                                                     </td>
