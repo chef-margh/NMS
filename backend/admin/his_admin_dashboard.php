@@ -4,6 +4,8 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
+  $aid_number = $_SESSION['ad_number'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
