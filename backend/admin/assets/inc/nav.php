@@ -1,13 +1,14 @@
 <?php
 
-$aid = $_SESSION['ad_id'];
-$ret = "SELECT * FROM his_admin WHERE ad_id=?";
-$stmt = $mysqli->prepare($ret);
-$stmt->bind_param('i', $aid);
-$stmt->execute();
-$res = $stmt->get_result();
-
-while ($row = $res->fetch_object()) {
+    $aid = $_SESSION['ad_id'];
+    $ret = "SELECT * FROM his_admin WHERE ad_id=?";
+    $stmt = $mysqli->prepare($ret);
+    $stmt->bind_param('i', $aid);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    //$cnt=1;
+    while ($row = $res->fetch_object()) {
+    
 ?>
 
     <div class="navbar-custom">
