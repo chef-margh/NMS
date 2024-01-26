@@ -57,8 +57,8 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Students</a></li>
-                                            <li class="breadcrumb-item active">View Students</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
+                                            <li class="breadcrumb-item active">View Patients</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>'s Profile</h4>
@@ -81,7 +81,9 @@
                                         <p class="text-muted mb-2 font-13"><strong>Address :</strong> <span class="ml-2"><?php echo $row->pat_addr;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
-                                        
+                                        <p class="text-muted mb-2 font-13"><strong>Ailment :</strong> <span class="ml-2"><?php echo $row->pat_ailment;?></span></p>
+                                        <hr>
+                                        <p class="text-muted mb-2 font-13"><strong>Date Recorded :</strong> <span class="ml-2"><?php echo date("d/m/Y - h:m", strtotime($mysqlDateTime));?></span></p>
                                         <hr>
 
 
@@ -97,14 +99,21 @@
                             <div class="col-lg-8 col-xl-8">
                                 <div class="card-box">
                                     <ul class="nav nav-pills navtab-bg nav-justified">
-                                        
-                                        
                                         <li class="nav-item">
-                                            <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                                 Student Visit Log
+                                            <a href="#aboutme" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                                Prescription
                                             </a>
                                         </li>
-                                        
+                                        <li class="nav-item">
+                                            <a href="#timeline" data-toggle="tab" aria-expanded="true" class="nav-link ">
+                                                 Vitals
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                Lab Records
+                                            </a>
+                                        </li>
                                     </ul>
                                     <!--Medical History-->
                                     <div class="tab-content">
@@ -143,7 +152,7 @@
                                                 <table class="table table-borderless mb-0">
                                                     <thead class="thead-light">
                                                         <tr>
-                                                            <th>Name</th>
+                                                            <th>Body Temperature</th>
                                                             <th>Heart Rate/Pulse</th>
                                                             <th>Respiratory Rate</th>
                                                             <th>Blood Pressure</th>
