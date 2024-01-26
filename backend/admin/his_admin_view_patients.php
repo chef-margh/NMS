@@ -59,12 +59,7 @@
                                         <div class="row">
                                             <div class="col-12 text-sm-center form-inline" >
                                                 <div class="form-group mr-2" style="display:none">
-                                                    <select id="demo-foo-filter-status" class="custom-select custom-select-sm">
-                                                        <option value="">Show all</option>
-                                                        <option value="Discharged">Discharged</option>
-                                                        <option value="OutPatients">Grade 11-A</option>
-                                                        <option value="InPatients">Grade 11-B</option>
-                                                    </select>
+                                                    
                                                 </div>
                                                 <div class="form-group">
                                                     <input id="demo-foo-search" type="text" placeholder="Search" class="form-control form-control-sm" autocomplete="on">
@@ -80,10 +75,10 @@
                                                 <th>#</th>
                                                 <th data-toggle="true">Student Name</th>
                                                 <th data-hide="phone">Student Number</th>
-                                                <th data-hide="phone">Student Address</th>
-                                                <th data-hide="phone">Time of entry</th>
+                                                
+                                                <th data-hide="phone">Mobile Number</th>
                                                 <th data-hide="phone">Student Age</th>
-                                                <th data-hide="phone">Grade</th>
+                                                
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -107,10 +102,10 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
                                                     <td><?php echo $row->pat_number;?></td>
-                                                    <td><?php echo $row->pat_addr;?></td>
+                                                    
                                                     <td><?php echo $row->pat_phone;?></td>
                                                     <td><?php echo $row->pat_age;?> Years</td>
-                                                    <td><?php echo $row->pat_type;?></td>
+                                                    
                                                     
                                                     <td><a href="his_admin_view_single_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a></td>
                                                 </tr>

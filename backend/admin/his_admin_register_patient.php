@@ -25,7 +25,7 @@
 			//declare a varible which will be passed to alert function
 			if($stmt)
 			{
-				$success = "Patient Details Added";
+				$success = "Student Details Added";
 			}
 			else {
 				$err = "Please Try Again Or Try Later";
@@ -71,7 +71,7 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="his_admin_dashboard.php">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Students</a></li>
                                             <li class="breadcrumb-item active">Add Student</li>
                                         </ol>
                                     </div>
@@ -91,11 +91,11 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="inputEmail4" class="col-form-label">First Name</label>
-                                                    <input type="text" required="required" name="pat_fname" class="form-control" id="inputEmail4" placeholder="Patient's First Name">
+                                                    <input type="text" required="required" name="pat_fname" class="form-control" id="inputEmail4" placeholder="Student's First Name">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="inputPassword4" class="col-form-label">Last Name</label>
-                                                    <input required="required" type="text" name="pat_lname" class="form-control"  id="inputPassword4" placeholder="Patient`s Last Name">
+                                                    <input required="required" type="text" name="pat_lname" class="form-control"  id="inputPassword4" placeholder="Student`s Last Name">
                                                 </div>
                                             </div>
 
@@ -106,43 +106,26 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="inputPassword4" class="col-form-label">Age</label>
-                                                    <input required="required" type="text" name="pat_age" class="form-control"  id="inputPassword4" placeholder="Patient`s Age">
+                                                    <input required="required" type="text" name="pat_age" class="form-control"  id="inputPassword4" placeholder="Student`s Age">
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="inputAddress" class="col-form-label">Address</label>
-                                                <input required="required" type="text" class="form-control" name="pat_addr" id="inputAddress" placeholder="Patient's Addresss">
-                                            </div>
+                                            
 
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="inputCity" class="col-form-label">Time of entry</label>
-                                                    <input required="required" type="text" name="pat_phone" class="form-control" id="inputCity">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="inputCity" class="col-form-label">Patient Ailment</label>
-                                                    <input required="required" type="text" name="pat_ailment" class="form-control" id="inputCity">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="inputState" class="col-form-label">Patient's Type</label>
-                                                    <select id="inputState" required="required" name="pat_type" class="form-control">
-                                                        <option>Choose</option>
-                                                        <option>InPatient</option>
-                                                        <option>OutPatient</option>
-                                                    </select>
-                                                </div>
+                                        
+                                                
+                                               
                                                 <div class="form-group col-md-2" style="display:none">
                                                     <?php 
                                                         $length = 5;    
                                                         $patient_number =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
                                                     ?>
-                                                    <label for="inputZip" class="col-form-label">Patient Number</label>
+                                                    <label for="inputZip" class="col-form-label">Student Number</label>
                                                     <input type="text" name="pat_number" value="<?php echo $patient_number;?>" class="form-control" id="inputZip">
                                                 </div>
                                             </div>
 
-                                            <button type="submit" name="add_patient" class="ladda-button btn btn-primary" data-style="expand-right">Add Patient</button>
+                                            <button type="submit" name="add_patient" class="ladda-button btn btn-primary" data-style="expand-right">Add Student</button>
 
                                         </form>
                                         <!--End Patient Form-->
