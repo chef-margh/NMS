@@ -41,11 +41,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="his_doc_dashboard.php">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="his_doc_lab_report.php">Incident Records</a></li>
-                                            <li class="breadcrumb-item active">View Incident Record</li>
+                                            <li class="breadcrumb-item"><a href="his_doc_lab_report.php">Incident Reports </a></li>
+                                            <li class="breadcrumb-item active">View Incident Report</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Incident Records</h4>
+                                    <h4 class="page-title">Incident Report</h4>
                                 </div>
                             </div>
                         </div>     
@@ -108,7 +108,7 @@
                                                     <td><?php echo $row->lab_pat_number;?></td>
                                                     
                                                     
-                                                    <td><a href="his_doc_view_single_lab_record.php?lab_id=<?php echo $row->lab_id ;?>&&lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View Incident Record</a></td>
+                                                    <td><a href="his_doc_view_single_lab_record.php?lab_id=<?php echo $row->lab_id ;?>&&lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View Incident Report </a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

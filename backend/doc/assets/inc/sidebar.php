@@ -24,9 +24,7 @@
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="his_doc_register_patient.php">Register Student</a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="his_doc_view_patients.php">View Students</a>
                                     </li>
@@ -111,12 +109,10 @@
                                     <li>
                                         <a href="his_doc_patient_lab_result.php">Treatment Given</a>
                                     </li>
-                                    <li>
-                                        <a href="his_doc_patient_lab_vitals.php">Incident Report</a>
-                                    </li>
+                                    
                                     
                                     <li>
-                                        <a href="his_doc_lab_report.php">Lab Reports</a>
+                                        <a href="his_doc_lab_report.php">Incident Report Details</Details></a>
                                     </li>
                                     <hr>
                                     
