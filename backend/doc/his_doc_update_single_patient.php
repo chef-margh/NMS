@@ -9,15 +9,14 @@
 			$pat_lname=$_POST['pat_lname'];
 			$pat_number=$_GET['pat_number'];
             $pat_phone=$_POST['pat_phone'];
-            $pat_type=$_POST['pat_type'];
-            $pat_addr=$_POST['pat_addr'];
+            
             $pat_age = $_POST['pat_age'];
             $pat_dob = $_POST['pat_dob'];
-            $pat_ailment = $_POST['pat_ailment'];
+            
             //sql to insert captured values
-			$query="UPDATE  his_patients  SET pat_fname=?, pat_lname=?, pat_age=?, pat_dob=?,  pat_phone=?, pat_type=?, pat_addr=?, pat_ailment=? WHERE pat_number=?";
+			$query="UPDATE  his_patients  SET pat_fname=?, pat_lname=?, pat_phone=?, pat_age=?,  pat_dob=?, WHERE pat_number=?";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sssssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob,  $pat_phone, $pat_type, $pat_addr, $pat_ailment, $pat_number);
+			$rc=$stmt->bind_param('ssssss', $pat_fname, $pat_lname, $pat_number, $pat_phone,  $pat_age, $pat_dob);
 			$stmt->execute();
 			/*
 			
@@ -123,28 +122,15 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="inputAddress" class="col-form-label">Address</label>
-                                                <input required="required" type="text" value="<?php echo $row->pat_addr;?>" class="form-control" name="pat_addr" id="inputAddress" placeholder="Student's Addresss">
-                                            </div>
+                                           
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
                                                     <label for="inputCity" class="col-form-label">Mobile Number</label>
                                                     <input required="required" type="text" value="<?php echo $row->pat_phone;?>" name="pat_phone" class="form-control" id="inputCity">
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="inputCity" class="col-form-label">Ailment</label>
-                                                    <input required="required" type="text" value="<?php echo $row->pat_ailment;?>" name="pat_ailment" class="form-control" id="inputCity">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="inputState" class="col-form-label">Student's Type</label>
-                                                    <select id="inputState" required="required" name="pat_type" class="form-control">
-                                                        <option>Choose</option>
-                                                        <option>InPatient</option>
-                                                        <option>OutPatient</option>
-                                                    </select>
-                                                </div>
+                                                
+                                                
                                                 
                                             </div>
 
