@@ -68,11 +68,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="his_admin_dashboard.php">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Employee</a></li>
-                                            <li class="breadcrumb-item active">Add Employee</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Nurse</a></li>
+                                            <li class="breadcrumb-item active">Add Nurse</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Add Employee Details</h4>
+                                    <h4 class="page-title">Add Nurse Details</h4>
                                 </div>
                             </div>
                         </div>     
@@ -101,7 +101,7 @@
                                                         $length = 5;    
                                                         $patient_number =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
                                                     ?>
-                                                    <label for="inputZip" class="col-form-label">Doctor Number</label>
+                                                    <label for="inputZip" class="col-form-label">Nurse Number</label>
                                                     <input type="text" name="doc_number" value="<?php echo $patient_number;?>" class="form-control" id="inputZip">
                                                 </div>
 
@@ -118,7 +118,7 @@
                                                 
                                             </div>
 
-                                            <button type="submit" name="add_doc" class="ladda-button btn btn-success" data-style="expand-right">Add Employee</button>
+                                            <button type="submit" name="add_doc" class="ladda-button btn btn-success" data-style="expand-right">Add Nurse</button>
 
                                         </form>
                                         <!--End Patient Form-->
