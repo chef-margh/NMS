@@ -94,7 +94,7 @@
                 <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     Create New
                     <i class="mdi mdi-chevron-down"></i> 
-                </a>
+                </a>  
                 <div class="dropdown-menu">
                     
 

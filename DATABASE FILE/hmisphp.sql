@@ -118,8 +118,8 @@ CREATE TABLE `his_laboratory` (
   `lab_id` int(20) NOT NULL,
   `lab_pat_name` varchar(200) DEFAULT NULL,
   `lab_pat_number` varchar(200) DEFAULT NULL,
-  `lab_pat_tests` longtext,
-  `lab_pat_results` longtext,
+  `lab_pat_tests` varchar(200) DEFAULT NULL,
+  `lab_pat_results` varchar(200) DEFAULT NULL,
   `lab_number` varchar(200) DEFAULT NULL,
   `lab_date_rec` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
