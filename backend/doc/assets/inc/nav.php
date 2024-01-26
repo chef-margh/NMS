@@ -101,7 +101,7 @@
                     <!-- item-->
                     <a href="his_doc_register_patient.php" class="dropdown-item">
                         <i class="fe-activity mr-1"></i>
-                        <span>Patient</span>
+                        <span>Student</span>
                     </a>
 
 
@@ -109,7 +109,7 @@
                     <!-- item-->
                     <a href="his_doc_lab_report.php" class="dropdown-item">
                         <i class="fe-hard-drive mr-1"></i>
-                        <span>Laboratory Report</span>
+                        <span>Report</span>
                     </a>
 
                     
