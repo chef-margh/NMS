@@ -8,15 +8,14 @@
 			$pat_lname=$_POST['pat_lname'];
 			$pat_number=$_POST['pat_number'];
             $pat_phone=$_POST['pat_phone'];
-            $pat_type=$_POST['pat_type'];
-            $pat_addr=$_POST['pat_addr'];
+           
             $pat_age = $_POST['pat_age'];
             $pat_dob = $_POST['pat_dob'];
-            $pat_ailment = $_POST['pat_ailment'];
+            
             //sql to insert captured values
-			$query="insert into his_patients (pat_fname, pat_ailment, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_type, pat_addr) values(?,?,?,?,?,?,?,?,?)";
+			$query="insert into his_patients (pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_type, pat_addr) values(?,?,?,?,?,?,?,?,?)";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sssssssss', $pat_fname, $pat_ailment, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_type, $pat_addr);
+			$rc=$stmt->bind_param('ssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone);
 			$stmt->execute();
 			/*
 			
