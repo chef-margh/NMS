@@ -76,7 +76,7 @@
                                             <li class="breadcrumb-item active">Manage Patients</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Update Patient Details</h4>
+                                    <h4 class="page-title">Update Student Details</h4>
                                 </div>
                             </div>
                         </div>     

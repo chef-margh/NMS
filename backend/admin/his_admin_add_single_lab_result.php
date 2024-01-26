@@ -80,11 +80,11 @@
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
                                                 <li class="breadcrumb-item"><a href="his_admin_dashboard.php">Dashboard</a></li>
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
-                                                <li class="breadcrumb-item active">Add Lab Result</li>
+                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Report</a></li>
+                                                <li class="breadcrumb-item active">Student Details</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Add Lab Result</h4>
+                                        <h4 class="page-title">Student Detailst</h4>
                                     </div>
                                 </div>
                             </div>     
@@ -100,12 +100,12 @@
                                                 <div class="form-row">
 
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputEmail4" class="col-form-label">Patient Name</label>
+                                                        <label for="inputEmail4" class="col-form-label">Student Name</label>
                                                         <input type="text" required="required" readonly name="lab_pat_name" value="<?php echo $row->lab_pat_name;?>" class="form-control" id="inputEmail4" placeholder="Patient's First Name">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputPassword4" class="col-form-label">Patient Ailment</label>
+                                                        <label for="inputPassword4" class="col-form-label">Student Ailment</label>
                                                         <input required="required" type="text" readonly name="lab_pat_ailment" value="<?php echo $row->lab_pat_ailment;?>" class="form-control"  id="inputPassword4" placeholder="Patient`s Last Name">
                                                     </div>
 
@@ -114,7 +114,7 @@
                                                 <div class="form-row">
 
                                                     <div class="form-group col-md-12">
-                                                        <label for="inputEmail4" class="col-form-label">Patient Number</label>
+                                                        <label for="inputEmail4" class="col-form-label">Student Number</label>
                                                         <input type="text" required="required" readonly name="lab_pat_number" value="<?php echo $row->lab_pat_number;?>" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
                                                     </div>
 
@@ -126,16 +126,16 @@
                                                 
 
                                                 <div class="form-group">
-                                                        <label for="inputAddress" class="col-form-label">Laboratory Tests</label>
+                                                        <label for="inputAddress" class="col-form-label">Student Ailment</label>
                                                         <textarea required="required"  type="text" class="form-control" name="lab_pat_tests" id="editor"><?php echo $row->lab_pat_tests;?></textarea>
                                                 </div>
 
                                                 <div class="form-group">
-                                                        <label for="inputAddress" class="col-form-label">Laboratory Result</label>
+                                                        <label for="inputAddress" class="col-form-label">Treatment Given</label>
                                                         <textarea required="required"   type="text" class="form-control" name="lab_pat_results" id="editor1"></textarea>
                                                 </div>
 
-                                                <button type="submit" name="add_patient_lab_result" class="ladda-button btn btn-success" data-style="expand-right">Add Laboratory Result</button>
+                                                <button type="submit" name="add_patient_lab_result" class="ladda-button btn btn-success" data-style="expand-right">Submit</button>
 
                                             </form>
                                             <!--End Patient Form-->

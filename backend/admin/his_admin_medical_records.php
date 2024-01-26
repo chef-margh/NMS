@@ -96,8 +96,8 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
+                                                <th data-toggle="true">Student Name</th>
+                                                <th data-hide="phone">Student Number</th>
                                                 <th data-hide="phone">Address</th>
                                                 <th data-hide="phone">Ailment</th>
                                                 <th data-hide="phone">Age</th>

@@ -149,20 +149,11 @@
                                     <li>
                                         <a href="his_admin_patient_lab_result.php">Treatment Given</a>
                                     </li>
-                                    <li>
-                                        <a href="his_admin_patient_lab_vitals.php">Incident Report</a>
-                                    </li>
                                     
                                     <li>
                                         <a href="his_admin_lab_report.php">Lab Reports</a>
                                     </li>
-                                    <hr>
-                                    <li>
-                                        <a href="his_admin_add_lab_equipment.php">Add Lab Equipment</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_admin_manage_lab_equipment.php">Manage Lab Equipments</a>
-                                    </li>
+    
                                 </ul>
                             </li>
 
