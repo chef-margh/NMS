@@ -99,6 +99,7 @@
                                                 <th data-toggle="true">Student</th>
                                                 <th data-hide="phone">GR.NO</th>
                                                 <th data-hide="phone">Address</th>
+
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
