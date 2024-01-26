@@ -59,8 +59,8 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">Manage Patients</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);"> Students</a></li>
+                                            <li class="breadcrumb-item active">Manage  Students</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Manage Student Details</h4>
@@ -97,9 +97,8 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th data-toggle="true">Student</th>
-                                                <th data-hide="phone">GR.NO</th>
-                                                <th data-hide="phone">Address</th>
-                                                <th data-hide="phone">Grade</th>
+                                                <th data-hide="phone">Student Number</th>
+                                               
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -123,8 +122,7 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
                                                     <td><?php echo $row->pat_number;?></td>
-                                                    <td><?php echo $row->pat_addr;?></td>
-                                                    <td><?php echo $row->pat_type;?></td>
+                                                    
                                                     
                                                     <td>
                                                         <a href="his_admin_manage_patient.php?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>
