@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-$mysqli = new mysqli("host", "username", "password", "database");
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-}
-
 $aid = $_SESSION['ad_id'];
 $ret = "SELECT * FROM his_admin WHERE ad_id=?";
 $stmt = $mysqli->prepare($ret);
