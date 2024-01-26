@@ -14,7 +14,7 @@
             $pat_dob = $_POST['pat_dob'];
             
             //sql to insert captured values
-			$query="UPDATE  his_patients  SET pat_fname=?, pat_lname=?, pat_phone=?, pat_age=?,  pat_dob=?, WHERE pat_number=?";
+			$query = "UPDATE his_patients SET pat_fname=?, pat_lname=?, pat_phone=?, pat_age=?, pat_dob=? WHERE pat_number=?";
 			$stmt = $mysqli->prepare($query);
 			$rc=$stmt->bind_param('ssssss', $pat_fname, $pat_lname, $pat_number, $pat_phone,  $pat_age, $pat_dob);
 			$stmt->execute();

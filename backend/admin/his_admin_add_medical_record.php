@@ -78,11 +78,11 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Name</th>
-                                                <th data-hide="phone">Number</th>
-                                                <th data-hide="phone">Address</th>
-                                                <th data-hide="phone">Phone</th>
-                                                <th data-hide="phone">Age</th>
+                                                <th data-toggle="true">Student Name</th>
+                                                <th data-hide="phone">Student Number</th>
+                                                <th data-hide="phone">Student Address</th>
+                                                <th data-hide="phone">Student Phone</th>
+                                                <th data-hide="phone">Student Age</th>
                                                 <th data-hide="phone">Category</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
