@@ -81,10 +81,10 @@
                                                 <th>#</th>
                                                 <th data-toggle="true">Student Name</th>
                                                 <th data-hide="phone">Student Number</th>
-                                                <th data-hide="phone">Student Address</th>
-                                                <th data-hide="phone">Time of entry</th>
+                                                
+                                                <th data-hide="phone">Mobile Number</th>
                                                 <th data-hide="phone">Student Age</th>
-                                                <th data-hide="phone">Student Category</th>
+                                                
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -93,7 +93,7 @@
                                                 *get details of allpatients
                                                 *
                                             */
-                                                $ret="SELECT * FROM  his_patients ORDER BY RAND() "; 
+                                                $ret="SELECT * FROM  his_patients ORDER BY pat_fname "; 
                                                 //sql code to get to ten docs  randomly
                                                 $stmt= $mysqli->prepare($ret) ;
                                                 $stmt->execute() ;//ok
@@ -108,10 +108,10 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
                                                     <td><?php echo $row->pat_number;?></td>
-                                                    <td><?php echo $row->pat_addr;?></td>
+                                                    
                                                     <td><?php echo $row->pat_phone;?></td>
                                                     <td><?php echo $row->pat_age;?> Years</td>
-                                                    <td><?php echo $row->pat_type;?></td>
+                                                    
                                                     
                                                     <td><a href="his_doc_view_single_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>&&pat_name=<?php echo $row->pat_fname;?>_<?php echo $row->pat_lname;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a></td>
                                                 </tr>

@@ -4,17 +4,16 @@
 		if(isset($_POST['add_patient_lab_test']))
 		{
 			$lab_pat_name = $_POST['lab_pat_name'];
-			$lab_pat_ailment = $_POST['lab_pat_ailment'];
             $lab_pat_number  = $_POST['lab_pat_number'];
             $lab_pat_tests = $_POST['lab_pat_tests'];
-            $lab_number  = $_POST['lab_number'];
+            $lab_date_rec = $_POST['lab_date_rec'];
             //$pres_number = $_POST['pres_number'];
             //$pres_ins = $_POST['pres_ins'];
             //$pres_pat_ailment = $_POST['pres_pat_ailment'];
             //sql to insert captured values
-			$query="INSERT INTO  his_laboratory  (lab_pat_name, lab_pat_ailment, lab_pat_number, lab_pat_tests, lab_number ) VALUES(?,?,?,?,?)";
+			$query="INSERT INTO  his_laboratory  (lab_pat_name, lab_pat_number, lab_pat_tests, lab_date_rec) VALUES(?,?,?,?)";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sssss', $lab_pat_name, $lab_pat_ailment, $lab_pat_number, $lab_pat_tests, $lab_number);
+			$rc=$stmt->bind_param('ssss', $lab_pat_name,$lab_pat_number, $lab_pat_tests, $lab_date_rec);
 			$stmt->execute();
 			/*
 			
@@ -83,7 +82,7 @@
                                                 <li class="breadcrumb-item active">Add Student's Ailment</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Add Student Ailment</h4>
+                                        <h4 class="page-title">Add Student's Ailment</h4>
                                     </div>
                                 </div>
                             </div>     
@@ -100,40 +99,33 @@
 
                                                     <div class="form-group col-md-6">
                                                         <label for="inputEmail4" class="col-form-label">Student Name</label>
-                                                        <input type="text" required="required" readonly name="lab_pat_name" value="<?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>" class="form-control" id="inputEmail4" placeholder="Student's First Name">
+                                                        <input type="text" required="required" readonly name="lab_pat_name" value="<?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>" class="form-control" id="inputEmail4" placeholder="Student's  Name">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputPassword4" class="col-form-label">Student Ailment</label>
-                                                        <input required="required" type="text" readonly name="lab_pat_ailment" value="<?php echo $row->pat_ailment;?>" class="form-control"  id="inputPassword4" placeholder="Patient`s Last Name">
+                                                        <label for="inputEmail4" class="col-form-label">Student's Roll Number</label>
+                                                        <input type="text" required="required" name="lab_pat_number" value="<?php echo $row->pat_number;?>" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
                                                     </div>
+
+
+                                                   
 
                                                 </div>
 
                                                 <div class="form-row">
 
-                                                    <div class="form-group col-md-12">
-                                                        <label for="inputEmail4" class="col-form-label">Student's Roll Number</label>
-                                                        <input type="text" required="required" readonly name="lab_pat_number" value="<?php echo $row->pat_number;?>" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
+                                                    <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="col-form-label">Date of Report</label>
+                                                            <input type="text" required="required" name="lab_pat_number" value="<?php echo $row->pat_number;?>" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
                                                     </div>
 
+                                                    
 
                                                 </div>
+
+                                                <hr>
 
                                                 
-                                                <hr>
-                                                <div class="form-row">
-                                                    
-                                            
-                                                    <div class="form-group col-md-2" style="display:none">
-                                                        <?php 
-                                                            $length = 5;    
-                                                            $pres_no =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
-                                                        ?>
-                                                        <label for="inputZip" class="col-form-label">Lab Test Number</label>
-                                                        <input type="text" name="lab_number" value="<?php echo $pres_no;?>" class="form-control" id="inputZip">
-                                                    </div>
-                                                </div>
 
                                                 <div class="form-group">
                                                         <label for="inputAddress" class="col-form-label">Ailment Description</label>
