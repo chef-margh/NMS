@@ -62,8 +62,8 @@
                                                     <select id="demo-foo-filter-status" class="custom-select custom-select-sm">
                                                         <option value="">Show all</option>
                                                         <option value="Discharged">Discharged</option>
-                                                        <option value="OutPatients">OutPatients</option>
-                                                        <option value="InPatients">InPatients</option>
+                                                        <option value="OutPatients">Grade 11-A</option>
+                                                        <option value="InPatients">Grade 11-B</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
@@ -78,11 +78,11 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Name</th>
-                                                <th data-hide="phone">GR.NO</th>
-                                                <th data-hide="phone">Address</th>
-                                                <th data-hide="phone">Phone Number</th>
-                                                <th data-hide="phone">Age</th>
+                                                <th data-toggle="true">Student Name</th>
+                                                <th data-hide="phone">Student Number</th>
+                                                <th data-hide="phone">Student Address</th>
+                                                <th data-hide="phone">Time of entry</th>
+                                                <th data-hide="phone">Student Age</th>
                                                 <th data-hide="phone">Grade</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
