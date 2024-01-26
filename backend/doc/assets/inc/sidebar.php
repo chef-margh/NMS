@@ -10,7 +10,7 @@
                             <li class="menu-title">Navigation</li>
 
                             <li>
-                                <a href="his_admin_dashboard.php">
+                                <a href="his_doc_dashboard.php">
                                     <i class="fe-airplay"></i>
                                     <span> Home </span>
                                 </a>
@@ -25,13 +25,13 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_admin_register_patient.php">Register Student</a>
+                                        <a href="his_doc_register_patient.php">Register Student</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_view_patients.php">View Students</a>
+                                        <a href="his_doc_view_patients.php">View Students</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_manage_patient.php">Manage Students</a>
+                                        <a href="his_doc_manage_patient.php">Manage Students</a>
                                     </li>
                                     <hr>
                                 </ul>
@@ -47,33 +47,33 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_admin_add_pharm_cat.php">Add Pharm Category</a>
+                                        <a href="his_doc_add_pharm_cat.php">Add Pharm Category</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_view_pharm_cat.php">View Pharm Category</a>
+                                        <a href="his_doc_view_pharm_cat.php">View Pharm Category</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_manage_pharm_cat.php">Manage Pharm Category</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a href="his_admin_add_pharmaceuticals.php">Add Pharmaceuticals</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_admin_view_pharmaceuticals.php">View Pharmaceuticals</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_admin_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
+                                        <a href="his_doc_manage_pharm_cat.php">Manage Pharm Category</a>
                                     </li>
                                     <hr>
                                     <li>
-                                        <a href="his_admin_add_presc.php">Add Prescriptions</a>
+                                        <a href="his_doc_add_pharmaceuticals.php">Add Pharmaceuticals</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_view_presc.php">View Prescriptions</a>
+                                        <a href="his_doc_view_pharmaceuticals.php">View Pharmaceuticals</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_manage_presc.php">Manage Prescriptions</a>
+                                        <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <a href="his_doc_add_presc.php">Add Prescriptions</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_view_presc.php">View Prescriptions</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_manage_presc.php">Manage Prescriptions</a>
                                     </li>
                                 </ul>
                             </li>
@@ -88,11 +88,11 @@
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
                                     <li>
-                                        <a href="his_admin_pharm_inventory.php">Pharmaceuticals</a>
+                                        <a href="his_doc_pharm_inventory.php">Pharmaceuticals</a>
                                     </li>
 
                                     <li>
-                                        <a href="his_admin_equipments_inventory.php">Assets</a>
+                                        <a href="his_doc_equipments_inventory.php">Assets</a>
                                     </li>
                                     
                                 </ul>
@@ -106,17 +106,17 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_admin_patient_lab_test.php">Student Ailment</a>
+                                        <a href="his_doc_patient_lab_test.php">Student Ailment</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_patient_lab_result.php">Treatment Given</a>
+                                        <a href="his_doc_patient_lab_result.php">Treatment Given</a>
                                     </li>
                                     <li>
-                                        <a href="his_admin_patient_lab_vitals.php">Incident Report</a>
+                                        <a href="his_doc_patient_lab_vitals.php">Incident Report</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="his_admin_lab_report.php">Lab Reports</a>
+                                        <a href="his_doc_lab_report.php">Lab Reports</a>
                                     </li>
                                     <hr>
                                     
