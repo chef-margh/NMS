@@ -106,8 +106,8 @@
                                     
                                     
                                 </ul>
-                            </li>
-                            <li>
+                         </li>
+                        <li>
                                 <a href="javascript: void(0);">
                                     <i class=" fas fa-funnel-dollar "></i>
                                     <span> Inventory </span>
@@ -124,10 +124,10 @@
                                     </li>
                                     
                                 </ul>
-                            </li>
+                        </li>
                 
 
-                            <li>
+                        <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-file-text"></i>
                                     <span> Medical Records </span>
@@ -142,9 +142,9 @@
                                     </li>
                                     
                                 </ul>
-                            </li>
+                        </li>
 
-                            <li>
+                        <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-flask"></i>
                                     <span> Report </span>
@@ -172,7 +172,7 @@
                                         <a href="his_admin_manage_lab_equipment.php">Manage Lab Equipments</a>
                                     </li>
                                 </ul>
-                            </li>
+                         </li>
 
                     <li>
                         <a href="javascript: void(0);">
