@@ -29,19 +29,29 @@ if (isset($_POST['add_patient'])) {
 
         
         // SQL to insert captured values
-        $query = "INSERT INTO his_patients (pat_id, pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_phone2) VALUES (?, ?, ?, ?,?,?,?,?)";
-        $stmt = $mysqli->prepare($query);
-        $rc = $stmt->bind_param('ssssssss',$pat_id, $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_phone2);
+        $query = "INSERT INTO his_patients (pat_id, pat_fname, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_phone2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+$stmt = $mysqli->prepare($query);
 
+if ($stmt) {
+    // Assuming $pat_id, $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_phone2 are your variables holding values
+    $rc = $stmt->bind_param('ssssssss', $pat_id, $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_phone2);
+
+    if ($rc) {
         if ($stmt->execute()) {
-            $success = "Student Details Added";
+            $success = "Patient Details Added";
         } else {
             $err = "Error: " . $stmt->error;
         }
     } else {
-        $err = "Please fill in all required fields.";
+        $err = "Binding parameters failed: " . $stmt->error;
     }
+    $stmt->close();
+} else {
+    $err = "Prepare statement failed: " . $mysqli->error;
 }
+
+// Close the connection
+$mysqli->close();
 ?>
 
 <!--End Server Side-->
