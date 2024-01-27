@@ -1,5 +1,4 @@
 <!--Server side code to handle Patient Registration-->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
 session_start();
 include('assets/inc/config.php');
