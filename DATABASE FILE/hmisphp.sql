@@ -134,10 +134,7 @@ INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`, `lab_pat_number`, `lab_p
 (8, 'hello world', '12', '<p>someething happened</p>', NULL, NULL, '2024-01-27 08:29:35');
 
 -- --------------------------------------------------------
-CREATE TABLE 'his_parents' (
-  'par_id' int(20) NOT NULL,
-  ''
-)
+
 --
 -- Table structure for table `his_patients`
 --
