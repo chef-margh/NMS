@@ -24,7 +24,7 @@
             }
         
             // Bind parameters to the statement
-            $bindResult = $stmt->bind_param('ssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone);
+            $bindResult = $stmt->bind_param('ssssss', $pat_fname, $pat_lname, $pat_number, $pat_phone, $pat_age, $pat_dob);
         
             // Check for bind_param error
             if ($bindResult === false) {
@@ -130,7 +130,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
                                                     <label for="inputCity" class="col-form-label">Mobile Number1</label>
-                                                    <input required="required" type="text" name="pat_phone" class="form-control" id="inputCity">
+                                                    <input required="required" type="text" name="pat_phone" class="form-control" id="inputCity" placeholder = "Guardian1's mobile number">
                                                 </div>
                                                 
                                                 

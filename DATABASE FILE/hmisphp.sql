@@ -109,7 +109,12 @@ CREATE TABLE `his_prnts` (
   `prnt_pwd` varchar(200) DEFAULT NULL,
   `prnt_number` varchar(200) DEFAULT NULL,
   `prnt_dpic` varchar(200) DEFAULT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+INSERT INTO `his_prnts` (`prnt_id`, `prnt_fname`, `prnt_lname`, `prnt_email`, `prnt_pwd`, `prnt_number`, `prnt_dpic`) VALUES
+(1,'Jason', 'Bourne', 'jasonisawesome@mail.com', '55c3b5386c486feb662a0785f340938f518d547f', 'ASDF', 'defaultimg.jpg');
+
 --
 
 INSERT INTO `his_docs` (`doc_id`, `doc_fname`, `doc_lname`, `doc_email`, `doc_pwd`, `doc_dept`, `doc_number`, `doc_dpic`) VALUES
@@ -155,22 +160,24 @@ CREATE TABLE `his_patients` (
   `pat_dob` varchar(200) DEFAULT NULL,
   `pat_age` varchar(200) DEFAULT NULL,
   `pat_number` varchar(200) DEFAULT NULL,
-  `pat_addr` varchar(200) DEFAULT NULL,
+  
   `pat_phone` varchar(200) DEFAULT NULL,
-  `pat_type` varchar(200) DEFAULT NULL,
-  `pat_date_joined` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `pat_ailment` varchar(200) DEFAULT NULL,
-  `pat_discharge_status` varchar(200) DEFAULT NULL
+  `prnt_id` int(20) NOT NULL,
+  `prnt_fname` varchar(200) DEFAULT NULL,
+  `prnt_lname` varchar(200) DEFAULT NULL,
+  `prnt_email` varchar(200) DEFAULT NULL,
+  `prnt_pwd` varchar(200) DEFAULT NULL,
+  `prnt_number` varchar(200) DEFAULT NULL,
+  `prnt_dpic` varchar(200) DEFAULT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `his_patients`
 --
 
-INSERT INTO `his_patients` (`pat_id`, `pat_fname`, `pat_lname`, `pat_dob`, `pat_age`, `pat_number`, `pat_addr`, `pat_phone`, `pat_type`, `pat_date_joined`, `pat_ailment`, `pat_discharge_status`) VALUES
-(8, 'Michael', 'White', '02/02/1992', '30', 'DCRI8', '60 Radford Street', '1458887854', 'InPatient', '2022-10-18 16:28:51.469431', 'Demo Test', NULL),
-(17, 'hello', 'world', '1234567', 'YZCLX', '12', NULL, '12/12/12', NULL, '2024-01-27 06:09:33.804579', NULL, NULL),
-(18, 'hello', 'worlds brother', '123123124', 'L80PR', '12', NULL, '12/12/12', NULL, '2024-01-27 08:36:54.459838', NULL, NULL);
+INSERT INTO `his_patients` (`pat_id`, `pat_fname`, `pat_lname`, `pat_dob`, `pat_age`, `pat_number`,`pat_phone`,`prnt_id`, `prnt_fname`, `prnt_lname`, `prnt_email`, `prnt_pwd`, `prnt_number`, `prnt_dpic`) VALUES
+(8, 'Michael', 'White', '02/02/1992', '30', 'DCRI8', '1458887854',1,'Jason', 'Bourne', 'jasonisawesome@mail.com', '55c3b5386c486feb662a0785f340938f518d547f', 'ASDF', 'defaultimg.jpg');
 
 -- --------------------------------------------------------
 

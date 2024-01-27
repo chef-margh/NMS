@@ -41,11 +41,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">View Patients</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Students</a></li>
+                                            <li class="breadcrumb-item active">View Students</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Patient Details</h4>
+                                    <h4 class="page-title">Student Details</h4>
                                 </div>
                             </div>
                         </div>     
@@ -80,10 +80,10 @@
                                                 <th>#</th>
                                                 <th data-toggle="true">Name</th>
                                                 <th data-hide="phone">Number</th>
-                                                <th data-hide="phone">Address</th>
+                                                
                                                 <th data-hide="phone">Phone</th>
                                                 <th data-hide="phone">Age</th>
-                                                <th data-hide="phone">Category</th>
+                                                
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -107,10 +107,10 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
                                                     <td><?php echo $row->pat_number;?></td>
-                                                    <td><?php echo $row->pat_addr;?></td>
+                                                    
                                                     <td><?php echo $row->pat_phone;?></td>
                                                     <td><?php echo $row->pat_age;?> Years</td>
-                                                    <td><?php echo $row->pat_type;?></td>
+                                                    
                                                     
                                                     <td><a href="his_admin_view_single_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a></td>
                                                 </tr>

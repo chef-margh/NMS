@@ -37,54 +37,7 @@
 
                           
 
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class="mdi mdi-pill"></i>
-                                    <span> Pharmacy </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="his_doc_add_pharm_cat.php">Add Pharm Category</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_view_pharm_cat.php">View Pharm Category</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_manage_pharm_cat.php">Manage Pharm Category</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a href="his_doc_add_pharmaceuticals.php">Add Pharmaceuticals</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_view_pharmaceuticals.php">View Pharmaceuticals</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
-                                    </li>
-                                    <hr>
-                                    
-                                </ul>
-                            </li>
-
-                            
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class=" fas fa-funnel-dollar "></i>
-                                    <span> Inventory </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                   
-                                    <li>
-                                        <a href="his_doc_pharm_inventory.php">Pharmaceuticals</a>
-                                    </li>
-
-                                   
-                                </ul>
-                            </li>
-                
+                           
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-flask"></i>

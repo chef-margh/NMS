@@ -6,7 +6,7 @@
         $prnt_number = $_POST['prnt_number'];
         //$prnt_email = $_POST['prnt_ea']
         $prnt_pwd = sha1(md5($_POST['prnt_pwd']));//double encrypt to increase security
-        $stmt=$mysqli->prepare("SELECT prnt_number, prnt_pwd, prnt_id FROM his_prnts WHERE  prnt_number=? AND prnt_pwd=? ");//sql to log in user
+        $stmt=$mysqli->prepare("SELECT prnt_number, prnt_pwd, prnt_id FROM his_patients WHERE  prnt_number=? AND prnt_pwd=? ");//sql to log in user
         $stmt->bind_param('ss', $prnt_number, $prnt_pwd);//bind fetched parameters
         $stmt->execute();//execute bind
         $stmt -> bind_result($prnt_number, $prnt_pwd ,$prnt_id);//bind result
@@ -28,7 +28,7 @@
     }
 ?>
 <!--End Login-->
-<!docTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     
 <head>
@@ -91,14 +91,14 @@
                                     <a href="index.php">
                                         <span><img src="assets/images/logo-dark.png" alt="" height="22"></span>
                                     </a>
-                                    <p class="text-muted mb-4 mt-3">Enter your email address and password to access Parent's panel.</p>
+                                    <p class="text-muted mb-4 mt-3">Enter your Parent Number and password to access Parent's panel.</p>
                                 </div>
 
                                 <form method='post' >
 
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Parent ID</label>
-                                        <input class="form-control" name="prnt_email" type="text" id="emailaddress" required="" placeholder="Enter your email">
+                                        <input class="form-control" name="prnt_number" type="text" id="emailaddress" required="" placeholder="Enter your parent number">
                                     </div>
 
                                     <div class="form-group mb-3">
