@@ -136,16 +136,6 @@ INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`,`lab_pat_number`, `lab_pa
 --
 -- Table structure for table `his_medical_records`
 --
-CREATE TABLE `his_medical_records` (
-  `mdr_id` int(20) NOT NULL,
-  `mdr_number` varchar(200) DEFAULT NULL,
-  `mdr_pat_name` varchar(200) DEFAULT NULL,
-  'mdr_pat_ailment' varchar(200) DEFAULT NULL,
-  `mdr_pat_age` varchar(200) DEFAULT NULL,
-  
-  `mdr_pat_number` varchar(200) DEFAULT NULL,
-  
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `his_medical_records`
@@ -286,8 +276,6 @@ ALTER TABLE `his_laboratory`
   ADD PRIMARY KEY (`lab_id`);
 
 --  Indexes for table 'his_medical_records'
-ALTER TABLE `his_medical_records`
-  ADD PRIMARY KEY (`mdr_id`);
 
 --
 -- Indexes for table `his_patients`
@@ -350,8 +338,6 @@ ALTER TABLE `his_laboratory`
 --
 -- AUTO_INCREMENT for table `his_medical_records`
 --
-ALTER TABLE `his_medical_records`
-  MODIFY `mdr_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 -- AUTO_INCREMENT for table `his_patients`
 --
