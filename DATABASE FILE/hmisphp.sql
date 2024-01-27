@@ -100,7 +100,16 @@ CREATE TABLE `his_docs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `his_docs`
+-- Table structure for table 'his_prnts'
+CREATE TABLE `his_prnts` (
+  `prnt_id` int(20) NOT NULL,
+  `prnt_fname` varchar(200) DEFAULT NULL,
+  `prnt_lname` varchar(200) DEFAULT NULL,
+  `prnt_email` varchar(200) DEFAULT NULL,
+  `prnt_pwd` varchar(200) DEFAULT NULL,
+  `prnt_number` varchar(200) DEFAULT NULL,
+  `prnt_dpic` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 --
 
 INSERT INTO `his_docs` (`doc_id`, `doc_fname`, `doc_lname`, `doc_email`, `doc_pwd`, `doc_dept`, `doc_number`, `doc_dpic`) VALUES
@@ -134,11 +143,7 @@ INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`, `lab_pat_number`, `lab_p
 (8, 'hello world', '12', '<p>someething happened</p>', NULL, NULL, '2024-01-27 08:29:35');
 
 -- --------------------------------------------------------
-CREATE TABLE `his_parents` (
-  `prnt_id` int(20) NOT NULL,
-  `prnt_fname` varchar(200) DEFAULT NULL,
-  `prnt_lname` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 --
 -- Table structure for table `his_patients`
 --
