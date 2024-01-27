@@ -107,7 +107,7 @@ INSERT INTO `his_docs` (`doc_id`, `doc_fname`, `doc_lname`, `doc_email`, `doc_pw
 (5, 'Aletha', 'White', 'aletha@mail.com', 'dce0b27ba675df41e9cc07af80ec59c475810824', 'Laboratory', 'BKTWQ', 'defaultimg.jpg'),
 (6, 'Bryan', 'Areola', 'bryaniscool@mail.com', '55c3b5386c486feb662a0785f340938f518d547f', 'Surgery | Theatre', 'YDS7L', '1dbdea1069e783511e65a79a87726bdd.jpg'),
 (12, 'Jessica', 'Spencer', 'jessica@mail.com', 'dce0b27ba675df41e9cc07af80ec59c475810824', 'Accounting', '5VIFT', 'usric.png'),
-(13, 'hello', 'world\'s dad', 'helloworlds@mail.com', '06b57e3bd1000badb83c4b8c7a3a895d43d154e3', NULL, 'AIPO8', '07-03-15.jpg');
+(13, 'hello', 'worlds dad', 'helloworlds@mail.com', '06b57e3bd1000badb83c4b8c7a3a895d43d154e3', NULL, 'AIPO8', '07-03-15.jpg');
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ CREATE TABLE `his_patients` (
 INSERT INTO `his_patients` (`pat_id`, `pat_fname`, `pat_lname`, `pat_dob`, `pat_age`, `pat_number`, `pat_addr`, `pat_phone`, `pat_type`, `pat_date_joined`, `pat_ailment`, `pat_discharge_status`) VALUES
 (8, 'Michael', 'White', '02/02/1992', '30', 'DCRI8', '60 Radford Street', '1458887854', 'InPatient', '2022-10-18 16:28:51.469431', 'Demo Test', NULL),
 (17, 'hello', 'world', '1234567', 'YZCLX', '12', NULL, '12/12/12', NULL, '2024-01-27 06:09:33.804579', NULL, NULL),
-(18, 'hello', 'world\'s brother', '123123124', 'L80PR', '12', NULL, '12/12/12', NULL, '2024-01-27 08:36:54.459838', NULL, NULL);
+(18, 'hello', 'worlds brother', '123123124', 'L80PR', '12', NULL, '12/12/12', NULL, '2024-01-27 08:36:54.459838', NULL, NULL);
 
 -- --------------------------------------------------------
 
