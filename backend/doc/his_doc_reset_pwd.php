@@ -10,7 +10,7 @@
             $token = sha1(md5($_POST['token']));
             $status = $_POST['status'];
             $pwd = $_POST['pwd'];
-			//$ad_pwd=sha1(md5($_POST['ad_pwd']));//double encrypt to increase security
+			$ad_pwd=sha1(md5($_POST['ad_pwd']));//double encrypt to increase security
             //sql to insert captured values
 			$query="INSERT INTO his_pwdresets (email, token, status, pwd) VALUES(?,?,?,?)";
 			$stmt = $mysqli->prepare($query);

@@ -72,7 +72,7 @@
                                                     $stmt->close();
                                                 ?>
                                                 <h3 class="text-dark mt-1"><span data-plugin="counterup"><?php echo $doc;?></span></h3>
-                                                <p class="text-muted mb-1 text-truncate">Nurse's</p>
+                                                <p class="text-muted mb-1 text-truncate">Nurses</p>
                                             </div>
                                         </div>
                                     </div> <!-- end row-->
@@ -126,7 +126,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="card-box">
-                                    <h4 class="header-title mb-3">Nurse's</h4>
+                                    <h4 class="header-title mb-3">Nurses</h4>
 
                                     <div class="table-responsive">
                                         <table class="table table-borderless table-hover table-centered m-0">
@@ -136,7 +136,7 @@
                                                     <th colspan="2">Picture</th>
                                                     <th>Name</th>
                                                     <th>Email</th>
-                                                    <th>Department</th>
+                                                    
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -163,9 +163,7 @@
                                                     <td>
                                                         <?php echo $row->doc_email;?>
                                                     </td>
-                                                    <td>
-                                                        <?php echo $row->doc_dept;?>
-                                                    </td>
+                                                    
                                                     <td>
                                                         <a href="his_admin_view_single_employee.php?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="btn btn-xs btn-primary"><i class="mdi mdi-eye"></i> View</a>
                                                     </td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
