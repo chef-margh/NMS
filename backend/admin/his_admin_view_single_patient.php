@@ -70,6 +70,10 @@
                                 <div class="card-box text-center">
                                     <img src="assets/images/users/patient.png" class="rounded-circle avatar-lg img-thumbnail"
                                         alt="profile-image">
+                                        <div class="text-left mt-3">
+        <button class="btn btn-primary" id="sendAlertBtn">Send Alert Message</button>
+    </div>
+</div>
 
                                     
                                     <div class="text-left mt-3">
@@ -228,7 +232,6 @@
                                             </ul>
                                         </div>
                                         </div>
-                                        <button type="submit" name="add_patient" class="ladda-button btn btn-primary" data-style="expand-right">Send Alert Message</button>
                                         <!-- end lab records content-->
 
                                     </div> <!-- end tab-content -->
@@ -265,6 +268,13 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <script>
+    document.getElementById('sendAlertBtn').addEventListener('click', function() {
+        alert('Alert message sent!');
+    });
+</script>
+
 
     </body>
 
