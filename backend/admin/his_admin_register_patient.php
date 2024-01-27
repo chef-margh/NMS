@@ -1,4 +1,8 @@
 <!--Server side code to handle Patient Registration-->
+<!-- Include SweetAlert library before your custom script -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="path/to/your/his_admin_register_patient.js"></script>
+
 <?php
 session_start();
 include('assets/inc/config.php');
