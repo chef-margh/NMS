@@ -12,8 +12,9 @@
             //sql to insert captured values
 			$query="INSERT INTO his_pharmaceuticals_categories (pharm_cat_name, pharm_cat_desc) VALUES (?,?,?)";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sss', $pharm_cat_name, $pharm_cat_desc);
+			
 			$stmt->execute();
+            $stmt->bind_param('sss', $pharm_cat_name, $pharm_cat_desc);
 			/*
 			
 			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
