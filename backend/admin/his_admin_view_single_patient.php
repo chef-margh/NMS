@@ -228,6 +228,7 @@
                                             </ul>
                                         </div>
                                         </div>
+                                        <button type="submit" name="add_patient" class="ladda-button btn btn-primary" data-style="expand-right">Send Alert Message</button>
                                         <!-- end lab records content-->
 
                                     </div> <!-- end tab-content -->
