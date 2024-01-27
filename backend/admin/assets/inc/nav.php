@@ -1,5 +1,5 @@
-<?php
 
+<?php
     $aid = $_SESSION['ad_id'];
     $ret = "SELECT * FROM his_admin WHERE ad_id=?";
     $stmt = $mysqli->prepare($ret);
@@ -12,7 +12,7 @@
 ?>
 
     <div class="navbar-custom">
-        <ul class="list-unstyled topnav-menu float-right mb-0">
+        <ul class="list-unstyled topnav-menu float-right mb-0"> 
 
             <li class="d-none d-sm-block">
                 <form class="app-search">
