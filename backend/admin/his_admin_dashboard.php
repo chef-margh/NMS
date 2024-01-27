@@ -2,6 +2,7 @@
   session_start();
   include('assets/inc/config.php');
   include('assets/inc/checklogin.php');
+  include('assets/inc/nav.php');
   check_login();
   $aid=$_SESSION['ad_id'];
  
