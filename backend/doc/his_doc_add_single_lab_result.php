@@ -1,36 +1,29 @@
 <?php
-	session_start();
-	include('assets/inc/config.php');
-		if(isset($_POST['add_patient_lab_result']))
-		{
-			$lab_pat_name = $_POST['lab_pat_name'];
-			
-            $lab_pat_number  = $_POST['lab_pat_number'];
-            $lab_pat_tests = $_POST['lab_pat_tests'];
-            $lab_number  = $_GET['lab_number'];
-            $lab_pat_results = $_POST['lab_pat_results'];
-            //$pres_ins = $_POST['pres_ins'];
-            //$pres_pat_ailment = $_POST['pres_pat_ailment'];
-            //sql to insert captured values
-			$query="UPDATE   his_laboratory  SET lab_pat_name=?, lab_pat_number=?, lab_pat_tests=?, lab_pat_results=? WHERE  lab_number = ? ";
-			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sssss', $lab_pat_name,  $lab_pat_number, $lab_pat_tests, $lab_pat_results, $lab_number);
-			$stmt->execute();
-			/*
-			
-			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
-			*/ 
-			//declare a varible which will be passed to alert function
-			if($stmt)
-			{
-				$success = "Patient Laboratory Results Addded";
-			}
-			else {
-				$err = "Please Try Again Or Try Later";
-			}
-			
-			
-		}
+    session_start();
+    include('assets/inc/config.php');
+
+    if (isset($_POST['add_patient_lab_result'])) {
+        // Form validation and sanitation can be added here
+
+        $lab_pat_name = $_POST['lab_pat_name'];
+        $lab_pat_number = $_POST['lab_pat_number'];
+        $lab_pat_tests = $_POST['lab_pat_tests'];
+        $lab_number = $_GET['lab_number'];
+        $lab_pat_results = $_POST['lab_pat_results'];
+
+        // SQL to insert captured values
+        $query = "UPDATE his_laboratory SET lab_pat_name=?, lab_pat_number=?, lab_pat_tests=?, lab_pat_results=? WHERE lab_number=?";
+        $stmt = $mysqli->prepare($query);
+        $rc = $stmt->bind_param('sssss', $lab_pat_name, $lab_pat_number, $lab_pat_tests, $lab_pat_results, $lab_number);
+        
+        if ($stmt->execute()) {
+            // Success handling
+            $success = "Patient Laboratory Results Added";
+        } else {
+            // Error handling
+            $err = "Please Try Again Or Try Later: " . $stmt->error;
+        }
+    }
 ?>
 <!--End Server Side-->
 <!--End Patient Registration-->
