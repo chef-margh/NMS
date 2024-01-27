@@ -134,7 +134,11 @@ INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`, `lab_pat_number`, `lab_p
 (8, 'hello world', '12', '<p>someething happened</p>', NULL, NULL, '2024-01-27 08:29:35');
 
 -- --------------------------------------------------------
-
+CREATE TABLE `his_parents` (
+  `prnt_id` int(20) NOT NULL,
+  `prnt_fname` varchar(200) DEFAULT NULL,
+  `prnt_lname` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 --
 -- Table structure for table `his_patients`
 --
