@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap-4.1.3.min.css">
     <link rel="stylesheet" href="assets/css/owl-carousel.min.css">
     <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
-    <link rel="stylesheet" href="assets/css/linearicons.css">
+    <link rel="stylesheet" href="assets/css/linearicons.css">   
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -34,7 +34,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index. "></a>
+                    <a href="index.php"></a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
