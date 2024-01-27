@@ -84,7 +84,7 @@
                                         <div class="text-right mt-3">
         <button class="btn btn-primary" id="sendAlertBtn">Send Alert Message</button>
     </div>
-</div>
+
                                         
 
 
