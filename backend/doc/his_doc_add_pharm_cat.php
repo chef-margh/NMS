@@ -13,8 +13,9 @@
 			$query="INSERT INTO his_pharmaceuticals_categories (pharm_cat_name, pharm_cat_desc) VALUES (?,?)";
 			$stmt = $mysqli->prepare($query);
 			
-			$stmt->execute();
+			
             $stmt->bind_param('ss', $pharm_cat_name, $pharm_cat_desc);
+            $stmt->execute();
 			/*
 			
 			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
