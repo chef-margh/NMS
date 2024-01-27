@@ -1,8 +1,4 @@
 <!--Server side code to handle Patient Registration-->
-<!-- Include SweetAlert library before your custom script -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="path/to/your/his_admin_register_patient.js"></script>
-
 <?php
 session_start();
 include('assets/inc/config.php');
@@ -151,7 +147,6 @@ if (isset($_POST['add_patient'])) {
                                         </div>
 
                                         <button type="submit" name="add_patient" class="ladda-button btn btn-primary" data-style="expand-right">Add Student</button>
-
                                     </form>
                                     <!--End Patient Form-->
                                     <?php
