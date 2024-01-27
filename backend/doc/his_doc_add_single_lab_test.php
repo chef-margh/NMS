@@ -6,14 +6,14 @@
 			$lab_pat_name = $_POST['lab_pat_name'];
             $lab_pat_number  = $_POST['lab_pat_number'];
             $lab_pat_tests = $_POST['lab_pat_tests'];
-            $lab_date_rec = $_POST['lab_date_rec'];
+            
             //$pres_number = $_POST['pres_number'];
             //$pres_ins = $_POST['pres_ins'];
             //$pres_pat_ailment = $_POST['pres_pat_ailment'];
             //sql to insert captured values
-			$query="INSERT INTO  his_laboratory  (lab_pat_name, lab_pat_number, lab_pat_tests, lab_date_rec) VALUES(?,?,?,?)";
+			$query="INSERT INTO  his_laboratory  (lab_pat_name, lab_pat_number, lab_pat_tests) VALUES(?,?,?)";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('ssss', $lab_pat_name,$lab_pat_number, $lab_pat_tests, $lab_date_rec);
+			$rc=$stmt->bind_param('sss', $lab_pat_name,$lab_pat_number, $lab_pat_tests);
 			$stmt->execute();
 			/*
 			
@@ -114,11 +114,7 @@
 
                                                 <div class="form-row">
 
-                                                    <div class="form-group col-md-6">
-                                                            <label for="inputEmail4" class="col-form-label">Date of Report</label>
-                                                            <input type="text" required="required" name="lab_pat_number" value="<?php echo $row->pat_number;?>" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
-                                                    </div>
-
+                                                    
                                                     
 
                                                 </div>

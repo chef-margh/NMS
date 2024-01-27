@@ -82,9 +82,7 @@
                                                     <h2 class="mb-3">Student's Name : <?php echo $row->lab_pat_name;?></h2>
                                                     <hr>
                                                     <h3 class="text-danger ">Student Number : <?php echo $row->lab_pat_number;?></h3>
-                                                    <hr>
-                                                    <h3 class="text-danger ">Student Ailment : <?php echo $row->lab_pat_ailment;?></h3>
-                                                    <hr>
+                                                    
                                                     <h3 class="text-danger ">Date Recorded : <?php echo date("d/m/Y - h:m:s", strtotime($mysqlDateTime));?></h3>
                                                     <hr>
                                                     <h2 class="align-centre">Reported Ailment</h2>

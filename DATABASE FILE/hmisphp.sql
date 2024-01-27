@@ -118,8 +118,8 @@ CREATE TABLE `his_laboratory` (
   `lab_id` int(20) NOT NULL,
   `lab_pat_name` varchar(200) DEFAULT NULL,
   `lab_pat_number` varchar(200) DEFAULT NULL,
-  `lab_pat_tests` varchar(200) DEFAULT NULL,
-  `lab_pat_results` varchar(200) DEFAULT NULL,
+  `lab_pat_tests` longtext,
+  `lab_pat_results` longtext,
   `lab_number` varchar(200) DEFAULT NULL,
   `lab_date_rec` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -141,31 +141,7 @@ INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`,`lab_pat_number`, `lab_pa
 -- Table structure for table `his_medical_records`
 --
 
-CREATE TABLE `his_medical_records` (
-  `mdr_id` int(20) NOT NULL,
-  `mdr_number` varchar(200) DEFAULT NULL,
-  `mdr_pat_name` varchar(200) DEFAULT NULL,
-  `mdr_pat_adr` varchar(200) DEFAULT NULL,
-  `mdr_pat_age` varchar(200) DEFAULT NULL,
-  `mdr_pat_ailment` varchar(200) DEFAULT NULL,
-  `mdr_pat_number` varchar(200) DEFAULT NULL,
-  `mdr_pat_prescr` longtext,
-  `mdr_date_rec` timestamp(4) NOT NULL DEFAULT CURRENT_TIMESTAMP(4) ON UPDATE CURRENT_TIMESTAMP(4)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `his_medical_records`
---
-
-INSERT INTO `his_medical_records` (`mdr_id`, `mdr_number`, `mdr_pat_name`, `mdr_pat_adr`, `mdr_pat_age`, `mdr_pat_ailment`, `mdr_pat_number`, `mdr_pat_prescr`, `mdr_date_rec`) VALUES
-(1, 'ZNXI4', 'John Doe', '12 900 Los Angeles', '35', 'Malaria', 'RAV6C', '<ul><li>Combination of atovaquone and proguanil (Malarone)</li><li>Quinine sulfate (Qualaquin) with doxycycline (Vibramycin, Monodox, others)</li><li>Mefloquine.</li><li>Primaquine phosphate.</li></ul>', '2020-01-11 15:03:05.9839'),
-(2, 'MIA9P', 'Cynthia Connolly', '9 Hill Haven Drive', '22', 'Demo Test', '3Z14K', NULL, '2022-10-18 17:07:46.7306'),
-(3, 'F1ZHQ', 'Michael White', '60 Radford Street', '30', 'Demo Test', 'DCRI8', NULL, '2022-10-18 17:08:35.7938'),
-(4, 'ZLN0Q', 'Lawrence Bischof', '82 Bryan Street', '32', 'Demo Test', 'ISL1E', '<ol><li>sample</li><li>sampl</li><li>sample</li><li>sample</li></ol>', '2022-10-20 17:22:15.7034');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `his_patients`
 --
 
@@ -302,10 +278,6 @@ ALTER TABLE `his_laboratory`
   ADD PRIMARY KEY (`lab_id`);
 
 --
--- Indexes for table `his_medical_records`
---
-ALTER TABLE `his_medical_records`
-  ADD PRIMARY KEY (`mdr_id`);
 
 --
 -- Indexes for table `his_patients`
@@ -368,9 +340,7 @@ ALTER TABLE `his_laboratory`
 --
 -- AUTO_INCREMENT for table `his_medical_records`
 --
-ALTER TABLE `his_medical_records`
-  MODIFY `mdr_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
+
 -- AUTO_INCREMENT for table `his_patients`
 --
 ALTER TABLE `his_patients`
