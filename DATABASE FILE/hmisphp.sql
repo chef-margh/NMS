@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2022 at 06:03 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Jan 27, 2024 at 09:53 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -29,11 +30,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `his_accounts` (
   `acc_id` int(200) NOT NULL,
   `acc_name` varchar(200) DEFAULT NULL,
-  `acc_desc` text,
+  `acc_desc` text DEFAULT NULL,
   `acc_type` varchar(200) DEFAULT NULL,
   `acc_number` varchar(200) DEFAULT NULL,
   `acc_amount` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `his_accounts`
@@ -57,7 +58,7 @@ CREATE TABLE `his_admin` (
   `ad_email` varchar(200) DEFAULT NULL,
   `ad_pwd` varchar(200) DEFAULT NULL,
   `ad_dpic` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `his_admin`
@@ -75,11 +76,11 @@ INSERT INTO `his_admin` (`ad_id`, `ad_fname`, `ad_lname`, `ad_email`, `ad_pwd`, 
 CREATE TABLE `his_assets` (
   `asst_id` int(20) NOT NULL,
   `asst_name` varchar(200) DEFAULT NULL,
-  `asst_desc` longtext,
+  `asst_desc` longtext DEFAULT NULL,
   `asst_vendor` varchar(200) DEFAULT NULL,
   `asst_status` varchar(200) DEFAULT NULL,
   `asst_dept` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ CREATE TABLE `his_docs` (
   `doc_dept` varchar(200) DEFAULT NULL,
   `doc_number` varchar(200) DEFAULT NULL,
   `doc_dpic` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `his_docs`
@@ -104,13 +105,13 @@ CREATE TABLE `his_docs` (
 
 INSERT INTO `his_docs` (`doc_id`, `doc_fname`, `doc_lname`, `doc_email`, `doc_pwd`, `doc_dept`, `doc_number`, `doc_dpic`) VALUES
 (5, 'Aletha', 'White', 'aletha@mail.com', 'dce0b27ba675df41e9cc07af80ec59c475810824', 'Laboratory', 'BKTWQ', 'defaultimg.jpg'),
-(6, 'Bryan', 'Arreola', 'bryan@mail.com', '55c3b5386c486feb662a0785f340938f518d547f', 'Surgery | Theatre', 'YDS7L', 'user-default-2-min.png'),
-(12, 'Jessica', 'Spencer', 'jessica@mail.com', 'dce0b27ba675df41e9cc07af80ec59c475810824', 'Accounting', '5VIFT', 'usric.png');
+(6, 'Bryan', 'Areola', 'bryaniscool@mail.com', '55c3b5386c486feb662a0785f340938f518d547f', 'Surgery | Theatre', 'YDS7L', '1dbdea1069e783511e65a79a87726bdd.jpg'),
+(12, 'Jessica', 'Spencer', 'jessica@mail.com', 'dce0b27ba675df41e9cc07af80ec59c475810824', 'Accounting', '5VIFT', 'usric.png'),
+(13, 'hello', 'world\'s dad', 'helloworlds@mail.com', '06b57e3bd1000badb83c4b8c7a3a895d43d154e3', NULL, 'AIPO8', '07-03-15.jpg');
 
 -- --------------------------------------------------------
 
-
-
+--
 -- Table structure for table `his_laboratory`
 --
 
@@ -118,63 +119,51 @@ CREATE TABLE `his_laboratory` (
   `lab_id` int(20) NOT NULL,
   `lab_pat_name` varchar(200) DEFAULT NULL,
   `lab_pat_number` varchar(200) DEFAULT NULL,
-  `lab_pat_tests` longtext,
-  `lab_pat_results` longtext,
+  `lab_pat_tests` longtext DEFAULT NULL,
+  `lab_pat_results` longtext DEFAULT NULL,
   `lab_number` varchar(200) DEFAULT NULL,
-  `lab_date_rec` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `lab_date_rec` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `his_laboratory`
 --
 
-INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`,`lab_pat_number`, `lab_pat_tests`, `lab_pat_results`, `lab_number`, `lab_date_rec`) VALUES
-(5, 'Christine Moore',  '4TLG0', '<ol><li>Test One</li><li>Test Two</li><li>Test Three</li><li>Test Four</li><li>Test Five</li></ol>', '<ol><li>Result One</li><li>Result Two</li><li>Result Three</li></ol>', 'RA4UM', '2022-10-22 11:01:11');
+INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`, `lab_pat_number`, `lab_pat_tests`, `lab_pat_results`, `lab_number`, `lab_date_rec`) VALUES
+(3, 'John Doe', 'RAV6C', '<p><strong>Pain areas: </strong>in the abdomen or muscles</p><p><strong>Whole body: </strong>chills, fatigue, fever, night sweats, shivering, or sweating</p><p><strong>Gastrointestinal: </strong>diarrhoea, nausea, or vomiting</p><p><strong>Also common: </strong>fast heart rate, headache, mental confusion, or pallor</p>', '<p>DINGUS</p>', '90ZNX', '2024-01-27 03:49:55'),
+(8, 'hello world', '12', '<p>someething happened</p>', NULL, NULL, '2024-01-27 08:29:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `his_medical_records`
---
-
---
--- Dumping data for table `his_medical_records`
---
-
-INSERT INTO `his_medical_records` (`mdr_id`, `mdr_number`, `mdr_pat_name`,`mdr_pat_age`, `mdr_pat_ailment`, `mdr_pat_number`, `mdr_pat_prescr`, `mdr_date_rec`) VALUES
-(1, 'ZLN0Q', 'Lawrence Bischof','32', 'Demo Test', 'ISL1E', '<ol><li>sample</li><li>sampl</li><li>sample</li><li>sample</li></ol>', '2022-10-20 17:22:15.7034');
-
-
 -- Table structure for table `his_patients`
 --
 
 CREATE TABLE `his_patients` (
-  `pat_id` int(20) DEFAULT NOT NULL,
+  `pat_id` int(20) NOT NULL,
   `pat_fname` varchar(200) DEFAULT NULL,
   `pat_lname` varchar(200) DEFAULT NULL,
   `pat_dob` varchar(200) DEFAULT NULL,
   `pat_age` varchar(200) DEFAULT NULL,
   `pat_number` varchar(200) DEFAULT NULL,
-  'pat_phone2' varchar(200) DEFAULT NULL;
-  
+  `pat_addr` varchar(200) DEFAULT NULL,
   `pat_phone` varchar(200) DEFAULT NULL,
-  
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pat_type` varchar(200) DEFAULT NULL,
+  `pat_date_joined` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `pat_ailment` varchar(200) DEFAULT NULL,
+  `pat_discharge_status` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `his_patients`
 --
 
-INSERT INTO `his_patients` (`pat_id`, `pat_fname`, `pat_lname`, `pat_dob`, `pat_age`, `pat_number`, `pat_phone`,'pat_phone2') VALUES
-(8, 'Michael', 'White', '02/02/1992', '30', 'DCRI8', '1458887854','123123123'),
-
+INSERT INTO `his_patients` (`pat_id`, `pat_fname`, `pat_lname`, `pat_dob`, `pat_age`, `pat_number`, `pat_addr`, `pat_phone`, `pat_type`, `pat_date_joined`, `pat_ailment`, `pat_discharge_status`) VALUES
+(8, 'Michael', 'White', '02/02/1992', '30', 'DCRI8', '60 Radford Street', '1458887854', 'InPatient', '2022-10-18 16:28:51.469431', 'Demo Test', NULL),
+(17, 'hello', 'world', '1234567', 'YZCLX', '12', NULL, '12/12/12', NULL, '2024-01-27 06:09:33.804579', NULL, NULL),
+(18, 'hello', 'world\'s brother', '123123124', 'L80PR', '12', NULL, '12/12/12', NULL, '2024-01-27 08:36:54.459838', NULL, NULL);
 
 -- --------------------------------------------------------
-
--- --------------------------------------------------------
-
---
-
 
 --
 -- Table structure for table `his_pharmaceuticals`
@@ -184,11 +173,11 @@ CREATE TABLE `his_pharmaceuticals` (
   `phar_id` int(20) NOT NULL,
   `phar_name` varchar(200) DEFAULT NULL,
   `phar_bcode` varchar(200) DEFAULT NULL,
-  `phar_desc` longtext,
+  `phar_desc` longtext DEFAULT NULL,
   `phar_qty` varchar(200) DEFAULT NULL,
   `phar_cat` varchar(200) DEFAULT NULL,
   `phar_vendor` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `his_pharmaceuticals`
@@ -209,8 +198,8 @@ CREATE TABLE `his_pharmaceuticals_categories` (
   `pharm_cat_id` int(20) NOT NULL,
   `pharm_cat_name` varchar(200) DEFAULT NULL,
   `pharm_cat_vendor` varchar(200) DEFAULT NULL,
-  `pharm_cat_desc` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pharm_cat_desc` longtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `his_pharmaceuticals_categories`
@@ -224,21 +213,13 @@ INSERT INTO `his_pharmaceuticals_categories` (`pharm_cat_id`, `pharm_cat_name`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `his_prescriptions`
---
-
-
---
 -- Table structure for table `his_pwdresets`
 --
 
 CREATE TABLE `his_pwdresets` (
   `id` int(20) NOT NULL,
   `email` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Indexes for dumped tables
@@ -268,21 +249,17 @@ ALTER TABLE `his_assets`
 ALTER TABLE `his_docs`
   ADD PRIMARY KEY (`doc_id`);
 
-
 --
 -- Indexes for table `his_laboratory`
 --
 ALTER TABLE `his_laboratory`
   ADD PRIMARY KEY (`lab_id`);
 
---  Indexes for table 'his_medical_records'
-
 --
 -- Indexes for table `his_patients`
 --
 ALTER TABLE `his_patients`
   ADD PRIMARY KEY (`pat_id`);
-
 
 --
 -- Indexes for table `his_pharmaceuticals`
@@ -297,13 +274,10 @@ ALTER TABLE `his_pharmaceuticals_categories`
   ADD PRIMARY KEY (`pharm_cat_id`);
 
 --
-
 -- Indexes for table `his_pwdresets`
 --
 ALTER TABLE `his_pwdresets`
   ADD PRIMARY KEY (`id`);
-
-
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -314,53 +288,55 @@ ALTER TABLE `his_pwdresets`
 --
 ALTER TABLE `his_accounts`
   MODIFY `acc_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `his_admin`
 --
 ALTER TABLE `his_admin`
   MODIFY `ad_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `his_assets`
 --
 ALTER TABLE `his_assets`
   MODIFY `asst_id` int(20) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `his_docs`
 --
 ALTER TABLE `his_docs`
-  MODIFY `doc_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `his_equipments`
---
+  MODIFY `doc_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
+--
+-- AUTO_INCREMENT for table `his_laboratory`
+--
 ALTER TABLE `his_laboratory`
-  MODIFY `lab_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `his_medical_records`
---
+  MODIFY `lab_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
+--
 -- AUTO_INCREMENT for table `his_patients`
 --
 ALTER TABLE `his_patients`
-  MODIFY `pat_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
+  MODIFY `pat_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
+--
 -- AUTO_INCREMENT for table `his_pharmaceuticals`
 --
 ALTER TABLE `his_pharmaceuticals`
   MODIFY `phar_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `his_pharmaceuticals_categories`
 --
 ALTER TABLE `his_pharmaceuticals_categories`
   MODIFY `pharm_cat_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
 
+--
 -- AUTO_INCREMENT for table `his_pwdresets`
 --
 ALTER TABLE `his_pwdresets`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
---
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
