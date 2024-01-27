@@ -41,6 +41,7 @@
                         <li class="menu-active"><a href="index.php">Home</a></li>
                         <li><a href="backend/doc/index.php">Nurses Login</a></li>
                         <li><a href="backend/admin/index.php">Admin Login</a></li>
+                        <li><a href = "backend/parent/index.php">Parent Login</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->		    		
                 </div>
