@@ -72,8 +72,8 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="his_admin_dashboard.php">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">Manage Patients</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Students</a></li>
+                                            <li class="breadcrumb-item active">Manage Students</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Update Student Details</h4>
