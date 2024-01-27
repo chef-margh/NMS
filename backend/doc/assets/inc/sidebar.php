@@ -20,7 +20,7 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fab fa-accessible-icon "></i>
-                                    <span> Patients </span>
+                                    <span> Students </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -64,15 +64,7 @@
                                         <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
                                     </li>
                                     <hr>
-                                    <li>
-                                        <a href="his_doc_add_presc.php">Add Prescriptions</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_view_presc.php">View Prescriptions</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_manage_presc.php">Manage Prescriptions</a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
 
@@ -89,10 +81,7 @@
                                         <a href="his_doc_pharm_inventory.php">Pharmaceuticals</a>
                                     </li>
 
-                                    <li>
-                                        <a href="his_doc_equipments_inventory.php">Assets</a>
-                                    </li>
-                                    
+                                   
                                 </ul>
                             </li>
                 
