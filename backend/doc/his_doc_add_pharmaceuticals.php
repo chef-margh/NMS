@@ -1,37 +1,36 @@
-
 <?php
-	session_start();
-	include('assets/inc/config.php');
-		if(isset($_POST['add_pharmaceutical']))
-		{
-			$phar_name = $_POST['phar_name'];
-			$phar_desc = $_POST['phar_desc'];
+    session_start();
+    include('assets/inc/config.php');
+        if(isset($_POST['add_pharmaceutical']))
+        {
+            $phar_name = $_POST['phar_name'];
+            $phar_desc = $_POST['phar_desc'];
             $phar_qty = $_POST['phar_qty'];
             $phar_cat = $_POST['phar_cat'];
             $phar_bcode = $_POST['phar_bcode'];
             
                 
             //sql to insert captured values
-			$query="INSERT INTO his_pharmaceuticals (phar_name, phar_bcode, phar_desc, phar_qty, phar_cat) VALUES (?,?,?,?,?)";
-			$stmt = $mysqli->prepare($query);
-			
-			$stmt->execute();
+            $query="INSERT INTO his_pharmaceuticals (phar_name, phar_bcode, phar_desc, phar_qty, phar_cat) VALUES (?,?,?,?,?)";
+            $stmt = $mysqli->prepare($query);
+            
+            $stmt->execute();
             $stmt->bind_param('sssss', $phar_name, $phar_bcode, $phar_desc, $phar_qty, $phar_cat);
-			/*
-			
-			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
-			*/ 
-			//declare a varible which will be passed to alert function
-			if($stmt)
-			{
-				$success = "Pharmaceutical  Added";
-			}
-			else {
-				$err = "Please Try Again Or Try Later";
-			}
-			
-			
-		}
+            /*
+            
+            *echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
+            */ 
+            //declare a varible which will be passed to alert function
+            if($stmt)
+            {
+                $success = "Pharmaceutical  Added";
+            }
+            else {
+                $err = "Please Try Again Or Try Later";
+            }
+            
+            
+        }
 ?>
 <!--End Server Side-->
 <!--End Patient Registration-->
@@ -182,5 +181,3 @@
         <script src="assets/js/pages/loading-btn.init.js"></script>
         
     </body>
-
-</html>
