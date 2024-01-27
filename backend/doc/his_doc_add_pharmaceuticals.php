@@ -12,10 +12,11 @@
             
                 
             //sql to insert captured values
-			$query="INSERT INTO his_pharmaceuticals (phar_name, phar_bcode, phar_desc, phar_qty, phar_cat) VALUES (?,?,?,?,?,?)";
+			$query="INSERT INTO his_pharmaceuticals (phar_name, phar_bcode, phar_desc, phar_qty, phar_cat) VALUES (?,?,?,?,?)";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('ssssss', $phar_name, $phar_bcode, $phar_desc, $phar_qty, $phar_cat);
+			
 			$stmt->execute();
+            $stmt->bind_param('sssss', $phar_name, $phar_bcode, $phar_desc, $phar_qty, $phar_cat);
 			/*
 			
 			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
