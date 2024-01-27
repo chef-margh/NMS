@@ -159,7 +159,7 @@ INSERT INTO `his_medical_records` (`mdr_id`, `mdr_number`, `mdr_pat_name`,`mdr_p
 --
 
 CREATE TABLE `his_patients` (
-  `pat_id` int(20) NOT NULL,
+  `pat_id` int(20) DEFAULT NOT NULL,
   `pat_fname` varchar(200) DEFAULT NULL,
   `pat_lname` varchar(200) DEFAULT NULL,
   `pat_dob` varchar(200) DEFAULT NULL,
