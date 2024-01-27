@@ -80,7 +80,7 @@
                                                 <th>#</th>
                                                 <th data-toggle="true">Student Name</th>
                                                 <th data-hide="phone">Student Number</th>
-                                                <th data-hide="phone">Student Ailment</th>
+                                                
                                                 <th data-hide="phone">Date of Record</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
@@ -106,7 +106,7 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->lab_pat_name;?></td>
                                                     <td><?php echo $row->lab_pat_number;?></td>
-                                                    <td><?php echo $row->lab_pat_ailment;?></td>
+                                                    
                                                     <td><?php echo date("d/m/Y", strtotime($mysqlDateTime));?></td>
                                                     <td><a href="his_admin_add_single_lab_result.php?lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-flask"></i> Add Lab Result</a></td>
                                                 </tr>
