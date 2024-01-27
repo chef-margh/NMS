@@ -71,6 +71,7 @@
                                     <img src="assets/images/users/patient.png" class="rounded-circle avatar-lg img-thumbnail"
                                         alt="profile-image">
 
+
                                     
                                     <div class="text-left mt-3">
                                         
@@ -83,6 +84,7 @@
                                         <hr>
                                         <p class="text-muted mb-2 font-13"><strong>Date Recorded :</strong> <span class="ml-2"><?php echo date("d/m/Y - h:m", strtotime($mysqlDateTime));?></span></p>
                                         <hr>
+                                        
 
 
 
@@ -264,6 +266,13 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <script>
+    document.getElementById('sendAlertBtn').addEventListener('click', function() {
+        alert('Alert message sent!');
+    });
+</script>
+
 
     </body>
 
