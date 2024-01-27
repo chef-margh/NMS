@@ -146,14 +146,15 @@ INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`,`lab_pat_number`, `lab_pa
 --
 
 CREATE TABLE `his_patients` (
-  `pat_id` int(20) NOT NULL,
+  `pat_id` int(20) DEFAULT NOT NULL,
   `pat_fname` varchar(200) DEFAULT NULL,
   `pat_lname` varchar(200) DEFAULT NULL,
   `pat_dob` varchar(200) DEFAULT NULL,
   `pat_age` varchar(200) DEFAULT NULL,
   `pat_number` varchar(200) DEFAULT NULL,
-  `pat_addr` varchar(200) DEFAULT NULL,
+  `pat_addr` varchar(200) DEFAULT NULL, 
   `pat_phone` varchar(200) DEFAULT NULL,
+  `pat_phone2` varchar(200) DEFAULT NULL,
   `pat_type` varchar(200) DEFAULT NULL,
   `pat_date_joined` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
   `pat_ailment` varchar(200) DEFAULT NULL,
