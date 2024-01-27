@@ -129,10 +129,6 @@ CREATE TABLE `his_laboratory` (
 --
 
 INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`,`lab_pat_number`, `lab_pat_tests`, `lab_pat_results`, `lab_number`, `lab_date_rec`) VALUES
-(1, 'Lorem Ipsum ',  '7EW0L', '<ul><li><a href=\"https://www.medicalnewstoday.com/articles/179211.php\">Non-steroidal anti-inflammatory drugs</a> (NSAIDs) such as <a href=\"https://www.medicalnewstoday.com/articles/161255.php\">aspirin</a> or ibuprofen can help bring a fever down. These are available to purchase over-the-counter or <a target=\"_blank\" href=\"https://amzn.to/2qp3d0b\">online</a>. However, a mild fever may be helping combat the bacterium or virus that is causing the infection. It may not be ideal to bring it down.</li><li>If the fever has been caused by a bacterial infection, the doctor may prescribe an <a href=\"https://www.medicalnewstoday.com/articles/10278.php\">antibiotic</a>.</li><li>If a fever has been caused by a cold, which is caused by a viral infection, NSAIDs may be used to relieve uncomfortable symptoms. Antibiotics have no effect against viruses and will not be prescribed by your doctor for a viral infection.</li></ul>', '<ul><li>If the fever has been caused by a bacterial infection, the doctor may prescribe an <a href=\"https://www.medicalnewstoday.com/articles/10278.php\">antibiotic</a>.</li><li>If a fever has been caused by a cold, which is caused by a viral infection, NSAIDs may be used to relieve uncomfortable symptoms. Antibiotics have no effect against viruses and will not be prescribed by your doctor for a viral infection.</li></ul>', 'K67PL', '2020-01-12 13:32:07'),
-(2, 'Mart Developers',  '6P8HJ', '<ul><li>Body temperature</li><li>Blood</li><li>Stool</li><li>Urine</li></ul>', '<ul><li>Body Temperature 67 Degree Celcious(Abnormal)</li><li>Blood - Malaria Bacterial Tested Postive</li><li>Stool - Mucus tested postive</li><li>Urine -Urea Level were 20% higher than normal</li></ul><p><strong>Fever Tested Positive</strong></p>', '9DMN5', '2020-01-12 13:41:07'),
-(3, 'John Doe',  'RAV6C', '<p><strong>Pain areas: </strong>in the abdomen or muscles</p><p><strong>Whole body: </strong>chills, fatigue, fever, night sweats, shivering, or sweating</p><p><strong>Gastrointestinal: </strong>diarrhoea, nausea, or vomiting</p><p><strong>Also common: </strong>fast heart rate, headache, mental confusion, or pallor</p>', '<p><strong>Pain areas: </strong>in the abdomen or muscles -Tested Positive</p><p><strong>Whole body: </strong>chills, fatigue, fever, night sweats, shivering, or sweating - Tested Positive</p><p><strong>Gastrointestinal: </strong>diarrhoea, nausea, or vomiting - Tested Positive</p><p>&nbsp;</p>', '90ZNX', '2020-01-13 12:31:48'),
-(4, 'Cynthia Connolly',  '3Z14K', '<p>demo demo demo demo</p>', '<p>54545</p>', 'G0VZU', '2022-10-20 17:48:05'),
 (5, 'Christine Moore',  '4TLG0', '<ol><li>Test One</li><li>Test Two</li><li>Test Three</li><li>Test Four</li><li>Test Five</li></ol>', '<ol><li>Result One</li><li>Result Two</li><li>Result Three</li></ol>', 'RA4UM', '2022-10-22 11:01:11');
 
 -- --------------------------------------------------------
@@ -140,6 +136,23 @@ INSERT INTO `his_laboratory` (`lab_id`, `lab_pat_name`,`lab_pat_number`, `lab_pa
 --
 -- Table structure for table `his_medical_records`
 --
+CREATE TABLE `his_medical_records` (
+  `mdr_id` int(20) NOT NULL,
+  `mdr_number` varchar(200) DEFAULT NULL,
+  `mdr_pat_name` varchar(200) DEFAULT NULL,
+  'mdr_pat_ailment' varchar(200) DEFAULT NULL,
+  `mdr_pat_age` varchar(200) DEFAULT NULL,
+  
+  `mdr_pat_number` varchar(200) DEFAULT NULL,
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `his_medical_records`
+--
+
+INSERT INTO `his_medical_records` (`mdr_id`, `mdr_number`, `mdr_pat_name`,`mdr_pat_age`, `mdr_pat_ailment`, `mdr_pat_number`, `mdr_pat_prescr`, `mdr_date_rec`) VALUES
+(1, 'ZLN0Q', 'Lawrence Bischof','32', 'Demo Test', 'ISL1E', '<ol><li>sample</li><li>sampl</li><li>sample</li><li>sample</li></ol>', '2022-10-20 17:22:15.7034');
 
 
 -- Table structure for table `his_patients`
@@ -152,24 +165,19 @@ CREATE TABLE `his_patients` (
   `pat_dob` varchar(200) DEFAULT NULL,
   `pat_age` varchar(200) DEFAULT NULL,
   `pat_number` varchar(200) DEFAULT NULL,
-  `pat_addr` varchar(200) DEFAULT NULL,
+  'pat_phone2' varchar(200) DEFAULT NULL;
+  
   `pat_phone` varchar(200) DEFAULT NULL,
-  `pat_type` varchar(200) DEFAULT NULL,
-  `pat_date_joined` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `pat_ailment` varchar(200) DEFAULT NULL,
-  `pat_discharge_status` varchar(200) DEFAULT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `his_patients`
 --
 
-INSERT INTO `his_patients` (`pat_id`, `pat_fname`, `pat_lname`, `pat_dob`, `pat_age`, `pat_number`, `pat_addr`, `pat_phone`, `pat_type`, `pat_date_joined`, `pat_ailment`, `pat_discharge_status`) VALUES
-(8, 'Michael', 'White', '02/02/1992', '30', 'DCRI8', '60 Radford Street', '1458887854', 'InPatient', '2022-10-18 16:28:51.469431', 'Demo Test', NULL),
-(9, 'Lawrence', 'Bischof', '01/19/1990', '32', 'ISL1E', '82 Bryan Street', '7412225698', 'InPatient', '2022-10-18 16:53:26.210951', 'Demo Test', NULL),
-(10, 'Cynthia', 'Connolly', '10/11/2000', '22', '3Z14K', '9 Hill Haven Drive', '1478885458', 'InPatient', '2022-10-18 16:54:53.104490', 'Demo Test', NULL),
-(11, 'Helen', 'Macdougall', '01/01/1980', '42', 'KU8W4', '28 Holly Street', '1458889655', 'OutPatient', '2022-10-20 17:26:45.256878', 'Test Test', NULL),
-(12, 'Christine', 'Moore', '11/06/1994', '28', '4TLG0', '117 Bleecker Street', '7412569698', 'InPatient', '2022-10-22 10:38:30.937516', 'Demo Test', NULL);
+INSERT INTO `his_patients` (`pat_id`, `pat_fname`, `pat_lname`, `pat_dob`, `pat_age`, `pat_number`, `pat_phone`,'pat_phone2') VALUES
+(8, 'Michael', 'White', '02/02/1992', '30', 'DCRI8', '1458887854','123123123'),
+
 
 -- --------------------------------------------------------
 
@@ -277,7 +285,9 @@ ALTER TABLE `his_docs`
 ALTER TABLE `his_laboratory`
   ADD PRIMARY KEY (`lab_id`);
 
---
+--  Indexes for table 'his_medical_records'
+ALTER TABLE `his_medical_records`
+  ADD PRIMARY KEY (`mdr_id`);
 
 --
 -- Indexes for table `his_patients`
@@ -340,6 +350,8 @@ ALTER TABLE `his_laboratory`
 --
 -- AUTO_INCREMENT for table `his_medical_records`
 --
+ALTER TABLE `his_medical_records`
+  MODIFY `mdr_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 -- AUTO_INCREMENT for table `his_patients`
 --
