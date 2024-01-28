@@ -3,8 +3,8 @@
   include('assets/inc/config.php');
   include('assets/inc/checklogin.php');
   check_login();
-  $prnt_id=$_SESSION['prnt_id'];
-  $prnt_number = $_SESSION['prnt_number'];
+  $prnt_id=$_SESSION['pat_id'];
+  $prnt_number = $_SESSION['pat_number'];
 
 ?>
 <!DOCTYPE html>

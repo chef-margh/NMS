@@ -6,12 +6,12 @@
         $prnt_number = $_POST['prnt_number'];
         //$prnt_email = $_POST['prnt_ea']
         $prnt_pwd = sha1(md5($_POST['prnt_pwd']));//double encrypt to increase security
-        $stmt=$mysqli->prepare("SELECT prnt_number, prnt_pwd, prnt_id FROM his_patients WHERE  prnt_number=? AND prnt_pwd=? ");//sql to log in user
+        $stmt=$mysqli->prepare("SELECT prnt_number, prnt_pwd, pat_id FROM his_patients WHERE  prnt_number=? AND prnt_pwd=? ");//sql to log in user
         $stmt->bind_param('ss', $prnt_number, $prnt_pwd);//bind fetched parameters
         $stmt->execute();//execute bind
-        $stmt -> bind_result($prnt_number, $prnt_pwd ,$prnt_id);//bind result
+        $stmt -> bind_result($prnt_number, $prnt_pwd ,$pat_id);//bind result
         $rs=$stmt->fetch();
-        $_SESSION['prnt_id'] = $prnt_id;
+        $_SESSION['pat_id'] = $pat_id;
         $_SESSION['prnt_number'] = $prnt_number;//Assign session to prnt_number id
         //$uip=$_SERVER['REMOTE_ADDR'];
         //$ldate=date('d/m/Y h:i:s', time());

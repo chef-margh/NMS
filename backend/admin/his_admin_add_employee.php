@@ -94,16 +94,16 @@
                                                     <label for="inputPassword4" class="col-form-label">Last Name</label>
                                                     <input required="required" type="text" name="doc_lname" class="form-control"  id="inputPassword4">
                                                 </div>
-                                            </div>
-
-                                            <div class="form-group col-md-2" style="display:none">
+                                   <div class="form-group col-md-2" style="display:none">
                                                     <?php 
                                                         $length = 5;    
                                                         $patient_number =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
                                                     ?>
                                                     <label for="inputZip" class="col-form-label">Nurse Number</label>
                                                     <input type="text" name="doc_number" value="<?php echo $patient_number;?>" class="form-control" id="inputZip">
-                                                </div>
+                                                </div>         </div>
+
+                                                
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Email</label>
