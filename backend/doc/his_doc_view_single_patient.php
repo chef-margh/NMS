@@ -19,11 +19,12 @@ if (isset($_POST['sendAlertBtn'])) {
         $error_message = error_get_last()['message'];
         echo '<script>alert("Error sending alert message using mail function. ' . $error_message . '");</script>';
     }
-
+    
+    define('BASE_PATH', 'C:/xampp/htdocs/NMS/NMS/');
     // Using PHPMailer
-    require 'C:\xampp\htdocs\NMS\PHPMailer-master/Exception.php';
-    require 'C:\xampp\htdocs\NMS\PHPMailer-master/PHPMailer.php';
-    require 'C:\xampp\htdocs\NMS\PHPMailer-master/SMTP.php';
+    require 'C:\xampp\htdocs\NMS\NMS\PHPMailer-master\src\Exception.php';
+    require 'C:\xampp\htdocs\NMS\NMS\PHPMailer-master\src\Exception.php';
+    require 'C:\xampp\htdocs\NMS\NMS\PHPMailer-master\src\SMTP.php';
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
