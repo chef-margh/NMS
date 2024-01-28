@@ -1,102 +1,56 @@
+User
 <?php
-session_start();
-include('assets/inc/config.php');
-include('assets/inc/checklogin.php');
-check_login();
+  session_start();
+  include('assets/inc/config.php');
+  include('assets/inc/checklogin.php');
+  check_login();
 
-$doc_id = $_SESSION['doc_id'];
-
-if (isset($_POST['sendAlertBtn'])) {
-    // Using mail function
-    $to = "minecraftparadise007@gmail.com";
-    $subject = "Alert Message";
-    $message = "This is an alert message from the system.";
-    $headers = "From: webmaster@example.com"; // Change this email address
-
-    if (mail($to, $subject, $message, $headers)) {
-        echo '<script>alert("Alert message sent successfully using mail function.");</script>';
-    } else {
-        $error_message = error_get_last()['message'];
-        echo '<script>alert("Error sending alert message using mail function. ' . $error_message . '");</script>';
-    }
-    
-    define('BASE_PATH', 'C:/xampp/htdocs/NMS/NMS/');
-    // Using PHPMailer
-    require 'C:\xampp\htdocs\NMS\NMS\PHPMailer-master\src\Exception.php';
-    require 'C:\xampp\htdocs\NMS\NMS\PHPMailer-master\src\Exception.php';
-    require 'C:\xampp\htdocs\NMS\NMS\PHPMailer-master\src\SMTP.php';
-
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-
-    $to = "minecraftparadise007@gmail.com";
-    $subject = "Alert Message";
-    $message = "This is an alert message from the system.";
-
-    $mail = new PHPMailer(true);
-
-    try {
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.example.com'; // Your SMTP server
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'your_username';
-        $mail->Password   = 'your_password';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
-
-        $mail->setFrom('webmaster@example.com', 'Webmaster');
-        $mail->addAddress($to);
-
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body    = $message;
-
-        $mail->send();
-        echo '<script>alert("Alert message sent successfully using PHPMailer.");</script>';
-    } catch (Exception $e) {
-        echo '<script>alert("Error sending alert message using PHPMailer. ' . $mail->ErrorInfo . '");</script>';
-    }
-}
+  $doc_id=$_SESSION['doc_id'];
+  //$doc_number = $_SERVER['doc_number'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
 
-<?php include('assets/inc/head.php');?>
+    <?php include('assets/inc/head.php');?>
 
-<body>
+    <body>
 
-    <!-- Begin page -->
-    <div id="wrapper">
+        <!-- Begin page -->
+        <div id="wrapper">
 
-        <!-- Topbar Start -->
-        <?php include("assets/inc/nav.php");?>
-        <!-- end Topbar -->
+            <!-- Topbar Start -->
+             <?php include("assets/inc/nav.php");?>
+            <!-- end Topbar -->
 
-        <!-- ========== Left Sidebar Start ========== -->
-        <?php include("assets/inc/sidebar.php");?>
-        <!-- Left Sidebar End -->
+            <!-- ========== Left Sidebar Start ========== -->
+                <?php include("assets/inc/sidebar.php");?>
+            <!-- Left Sidebar End -->
 
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
 
-        <!-- Get Details Of A Single User And Display Them Here -->
-        <?php
-        $pat_number = $_GET['pat_number'];
-        $pat_id = $_GET['pat_id'];
-        $ret = "SELECT  * FROM his_patients WHERE pat_id=?";
-        $stmt = $mysqli->prepare($ret);
-        $stmt->bind_param('i', $pat_id);
-        $stmt->execute();
-        $res = $stmt->get_result();
-        while ($row = $res->fetch_object()) {
-            $mysqlDateTime = $row->pat_date_joined;
-        ?>
+            <!--Get Details Of A Single User And Display Them Here-->
+            <?php
+                $pat_number=$_GET['pat_number'];
+                $pat_id=$_GET['pat_id'];
+                $ret="SELECT  * FROM his_patients WHERE pat_id=?";
+                $stmt= $mysqli->prepare($ret) ;
+                $stmt->bind_param('i',$pat_id);
+                $stmt->execute() ;//ok
+                $res=$stmt->get_result();
+                //$cnt=1;
+                while($row=$res->fetch_object())
+            {
+                $mysqlDateTime = $row->pat_date_joined;
+            ?>
             <div class="content-page">
                 <div class="content">
-                    <!-- Start Content -->
+
+                    <!-- Start Content-->
                     <div class="container-fluid">
+
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
@@ -108,43 +62,129 @@ if (isset($_POST['sendAlertBtn'])) {
                                             <li class="breadcrumb-item active">View Patients</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title"><?php echo $row->pat_fname; ?> <?php echo $row->pat_lname; ?>'s Profile</h4>
+                                    <h4 class="page-title"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>'s Profile</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- end page title -->
+
                         <div class="row">
                             <div class="col-lg-4 col-xl-4">
-                                <!-- ... (rest of your existing code) ... -->
-                                <div class="text-right mt-3">
-                                    <form method="post">
-                                        <button type="submit" class="btn btn-primary" name="sendAlertBtn">Send Alert Message</button>
-                                    </form>
-                                </div>
-                                <!-- ... (rest of your existing code) ... -->
-                            </div> <!-- end col -->
-                            <?php } ?>
+                                <div class="card-box text-center">
+                                    <img src="assets/images/users/patient.png" class="rounded-circle avatar-lg img-thumbnail"
+                                        alt="profile-image">
+
+                                    
+                                    <div class="text-left mt-3">
+                                        
+                                        <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ml-2"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ml-2"><?php echo $row->pat_phone;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Address :</strong> <span class="ml-2"><?php echo $row->pat_addr;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
+                                        <div class="text-right mt-3">
+        <button class="btn btn-primary" id="sendAlertBtn">Send Alert Message</button>
+    </div>  
+
+                                        
+
+
+
+
+                                    </div>
+
+                                </div> <!-- end card-box -->
+
+                            </div> <!-- end col-->
+                            
+                            <?php }?>
                             <div class="col-lg-8 col-xl-8">
-                                <!-- ... (rest of your existing code) ... -->
+                                <div class="card-box">
+                                    <ul class="nav nav-pills navtab-bg nav-justified">
+                                        
+                                        <li class="nav-item">
+                                            <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                Lab Records
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+
+                                        <div class="tab-pane" id="settings">
+                                            <ul class="list-unstyled timeline-sm">
+                                                <?php
+                                                    $lab_pat_number =$_GET['pat_number'];
+                                                    $ret="SELECT  * FROM his_laboratory WHERE  	lab_pat_number  ='$lab_pat_number'";
+                                                    $stmt= $mysqli->prepare($ret) ;
+                                                    // $stmt->bind_param('i',$lab_pat_number);
+                                                    $stmt->execute() ;//ok
+                                                    $res=$stmt->get_result();
+                                                    //$cnt=1;
+                                                    
+                                                    while($row=$res->fetch_object())
+                                                        {
+                                                    $mysqlDateTime = $row->lab_date_rec; //trim timestamp to date
+
+                                                ?>
+                                                    <li class="timeline-sm-item">
+                                                        
+                                                        
+                                                        <p class="text-muted mt-2">
+                                                            <?php echo $row->lab_pat_tests;?>
+                                                        </p>
+                                                        <hr>
+                                                        <h5>
+                                                           Laboratory Results
+                                                        </h5>
+                                                        
+                                                        <p class="text-muted mt-2">
+                                                            <?php echo $row->lab_pat_results;?>
+                                                        </p>
+                                                        <hr>
+
+                                                    </li>
+                                                <?php }?>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                        <!-- end lab records content-->
+
+                                    </div> <!-- end tab-content -->
+                                </div> <!-- end card-box-->
+
                             </div> <!-- end col -->
                         </div>
-                        <!-- end row -->
+                        <!-- end row-->
+
                     </div> <!-- container -->
+
                 </div> <!-- content -->
+
                 <!-- Footer Start -->
-                <?php include('assets/inc/footer.php'); ?>
+                <?php include('assets/inc/footer.php');?>
                 <!-- end Footer -->
+
             </div>
+            
+
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+
         </div>
         <!-- END wrapper -->
+
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
+
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
     </body>
-</html>
+
+
+</html>.
