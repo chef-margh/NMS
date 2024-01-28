@@ -85,6 +85,34 @@
         <button class="btn btn-primary" id="sendAlertBtn">Send Alert Message</button>
     </div>
 
+    <?php
+    $twilioAccountSid = 'YOUR_TWILIO_ACCOUNT_SID';
+    $twilioAuthToken = 'YOUR_TWILIO_AUTH_TOKEN';
+    $twilioPhoneNumber = 'YOUR_TWILIO_PHONE_NUMBER';
+
+    echo "<script>
+        document.getElementById('sendAlertBtn').addEventListener('click', function() {
+            const patientPhoneNumber = '" . $row->pat_phone . "';
+            const message = 'Alert: Your message content goes here.';
+
+            const twilio = new Twilio.Rest.Client('$twilioAccountSid', '$twilioAuthToken');
+
+            twilio.messages.create({
+                to: patientPhoneNumber,
+                from: '$twilioPhoneNumber',
+                body: message
+            })
+            .then(message => {
+                console.log('SMS sent successfully. SID: ' + message.sid);
+            })
+            .catch(error => {
+                console.error('Error sending SMS: ' + error.message);
+            });
+        });
+      </script>";
+  ?>
+  
+
                                         
 
 
