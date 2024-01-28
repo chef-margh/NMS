@@ -146,7 +146,7 @@
                                                     $pres_pat_number = $_GET['pat_number'];
                                                     $ret="SELECT  * FROM his_prescriptions WHERE pres_pat_number = ?";
                                                     $stmt= $mysqli->prepare($ret) ;
-    
+                                                    $stmt->bind_param('s',$pres_pat_number);
                                                     $stmt->execute() ;//ok
                                                     $res=$stmt->get_result();
                                                     //$cnt=1;
