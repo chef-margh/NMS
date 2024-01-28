@@ -75,11 +75,10 @@
                                     <div class="text-left mt-3">
                                         
                                         <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ml-2"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ml-2"><?php echo $row->pat_phone;?></span></p>
-                                       
+                                        <p class="text-muted mb-2 font-13"><strong>Parent's Mobile :</strong><span class="ml-2"><?php echo $row->pat_phone;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
-                                        <hr>
+                                        
 
 
 
@@ -101,43 +100,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <!--Medical History-->
-                                    <div class="tab-content">
-                                        <div class="tab-pane show active" id="aboutme">
-                                             <ul class="list-unstyled timeline-sm">
-                                                <?php
-                                                    $pres_pat_number =$_GET['pat_number'];
-                                                    $ret="SELECT  * FROM his_prescriptions WHERE pres_pat_number ='$pres_pat_number'";
-                                                    $stmt= $mysqli->prepare($ret) ;
-                                                                                            
-                                                    // Check for prepare error
-                                                    if ($stmt === false) {
-                                                        die('Prepare Error: ' . $mysqli->error);
-                                                    }
-                                                    // $stmt->bind_param('i',$pres_pat_number );
-                                                    $stmt->execute() ;//ok
-                                                    $res=$stmt->get_result();
-                                                    //$cnt=1;
-                                                    
-                                                    while($row=$res->fetch_object())
-                                                        {
-                                                    $mysqlDateTime = $row->pres_date; //trim timestamp to date
-
-                                                ?>
-                                                    <li class="timeline-sm-item">
-                                                        <span class="timeline-sm-date"><?php echo date("Y-m-d", strtotime($mysqlDateTime));?></span>
-                                                        <h5 class="mt-0 mb-1"><?php echo $row->pres_pat_ailment;?></h5>
-                                                        <p class="text-muted mt-2">
-                                                            <?php echo $row->pres_ins;?>
-                                                        </p>
-
-                                                    </li>
-                                                <?php }?>
-                                            </ul>
-                                           
-                                        </div> <!-- end tab-pane -->
-                                        
-
+                                   
                                         <div class="tab-pane" id="settings">
                                             <ul class="list-unstyled timeline-sm">
                                                 <?php
@@ -156,13 +119,24 @@
                                                 ?>
                                                     <li class="timeline-sm-item">
                                                         <span class="timeline-sm-date"><?php echo date("Y-m-d", strtotime($mysqlDateTime));?></span>
-                                                        <h3 class="mt-0 mb-1"><?php echo $row->lab_pat_ailment;?></h3>
+                                                        
                                                         <hr>
                                                         <h5>
                                                            Laboratory  Tests
                                                         </h5>
                                                         
+                                                        <p class="text-muted mt-2">
+                                                            <?php echo $row->lab_pat_tests;?>
+                                                        </p>
+                                                        <hr>
+                                                        <h5>
+                                                           Laboratory Results
+                                                        </h5>
                                                         
+                                                        <p class="text-muted mt-2">
+                                                            <?php echo $row->lab_pat_results;?>
+                                                        </p>
+                                                        <hr>
 
                                                     </li>
                                                 <?php }?>
