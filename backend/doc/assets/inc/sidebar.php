@@ -84,22 +84,8 @@
                                    
                                 </ul>
                             </li>
-                
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class="mdi mdi-flask"></i>
-                                    <span> Report </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="his_doc_patient_lab_test.php">Student Ailment</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_patient_lab_result.php">Treatment Given</a>
-                                    </li>
 
-                                    <li>
+                            <li>
                                 <a href="javascript: void(0);">
                                     <i class="fe-file-text"></i>
                                     <span> Medical Records </span>
@@ -114,7 +100,21 @@
                                     </li>
                                     
                                 </ul>
-                            </li>
+                            </li>   
+                
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="mdi mdi-flask"></i>
+                                    <span> Report </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="his_doc_patient_lab_test.php">Student Ailment</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_patient_lab_result.php">Treatment Given</a>
+                                    </li>
                                     
                                     
                                     <li>
