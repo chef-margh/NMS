@@ -68,6 +68,23 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fe-file-text"></i>
+                                    <span> Medical Records </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="his_admin_add_medical_record.php">Add Medical Record</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_admin_manage_medical_record.php">Manage Medical Records</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+
                             
                             <li>
                                 <a href="javascript: void(0);">
