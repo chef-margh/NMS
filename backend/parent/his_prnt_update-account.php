@@ -5,17 +5,19 @@
 		{
 			$prnt_fname=$_POST['prnt_fname'];
 			$prnt_lname=$_POST['prnt_lname'];
-			$prnt_id=$_SESSION['prnt_id'];
+			
             $prnt_email=$_POST['prnt_email'];
             $pat_phone = $_POST['prnt_email'];
             $pat_fname=$_POST['pat_fname'];
             $pat_lname=$_POST['pat_lname'];
+            $pat_id=$_SESSION['pat_id'];
+
            // $prnt_pwd=sha1(md5($_POST['prnt_pwd']));
             $prnt_dpic=$_FILES["prnt_dpic"]["name"];
 		    move_uploaded_file($_FILES["prnt_dpic"]["tmp_name"],"assets/images/users/".$_FILES["prnt_dpic"]["name"]);
 
             //sql to insert captured values
-			$query="UPDATE his_patients SET prnt_fname=?, prnt_lname=?,  prnt_email=?, prnt_dpic=?, pat_phone=?, pat_fname=?, pat_lname = ? WHERE prnt_id = ?";
+			$query="UPDATE his_patients SET prnt_fname=?, prnt_lname=?,  prnt_email=?, prnt_dpic=?, pat_phone=?, pat_fname=?, pat_lname = ? WHERE pat_id = ?";
 			$stmt = $mysqli->prepare($query);
             if (!$stmt) {
                 die("Prepare failed: " . $mysqli->error);
@@ -24,7 +26,7 @@
                 echo "Failed to connect to MySQL: " . $mysqli->connect_error;
                 exit();
             }
-			$rc=$stmt->bind_param('sssssssi', $prnt_fname, $prnt_lname, $prnt_email, $prnt_dpic, $pat_phone,$pat_fname, $pat_lname,$prnt_id);
+			$rc=$stmt->bind_param('sssssssi', $prnt_fname, $prnt_lname, $prnt_email, $prnt_dpic, $pat_phone,$pat_fname, $pat_lname,$pat_id);
 			$stmt->execute();
 			/*
 			
@@ -44,11 +46,11 @@
         //Change Password
         if(isset($_POST['update_pwd']))
 		{
-            $prnt_number=$_SESSION['prnt_number'];
+            $pat_number=$_SESSION['pat_number'];
             $prnt_pwd=sha1(md5($_POST['prnt_pwd']));//double encrypt 
             
             //sql to insert captured values
-			$query="UPDATE his_patients SET prnt_pwd =? WHERE prnt_number = ?";
+			$query="UPDATE his_patients SET prnt_pwd =? WHERE pat_number = ?";
             
 			$stmt = $mysqli->prepare($query);
             if (!$stmt) {
@@ -58,7 +60,7 @@
                 echo "Failed to connect to MySQL: " . $mysqli->connect_error;
                 exit();
             }
-			$rc=$stmt->bind_param('ss', $prnt_pwd, $prnt_number);
+			$rc=$stmt->bind_param('ss', $prnt_pwd, $pat_number);
 			$stmt->execute();
             if ($stmt->affected_rows > 0) {
                 // Query executed successfully
@@ -143,7 +145,7 @@
                                         
                                         <p class="text-muted mb-2 font-13"><strong>Student Full Name :</strong> <span class="ml-2"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></span></p>
                                         
-                                        <p class="text-muted mb-2 font-13"><strong>Parent Number :</strong> <span class="ml-2"><?php echo $row->prnt_number;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Parent Number :</strong> <span class="ml-2"><?php echo $row->pat_number;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Email ID :</strong> <span class="ml-2"><?php echo $row->prnt_email;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Phone number: :</strong> <span class="ml-2"><?php echo $row->pat_phone;?></span></p>
 

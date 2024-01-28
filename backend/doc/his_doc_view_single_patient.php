@@ -43,7 +43,7 @@ User
                 //$cnt=1;
                 while($row=$res->fetch_object())
             {
-                $mysqlDateTime = $row->pat_date_joined;
+                $mysqlDateTime = $row->date_rec;
             ?>
             <div class="content-page">
                 <div class="content">

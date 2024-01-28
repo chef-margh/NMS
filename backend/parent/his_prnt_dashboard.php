@@ -4,7 +4,7 @@
   include('assets/inc/checklogin.php');
   check_login();
   $prnt_id=$_SESSION['pat_id'];
-  $prnt_number = $_SESSION['pat_number'];
+  $pat_number = $_SESSION['pat_number'];
 
 ?>
 <!DOCTYPE html>

@@ -20,16 +20,16 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fab fa-accessible-icon "></i>
-                                    <span> Students </span>
+                                    <span> Student Details </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     
                                     <li>
-                                        <a href="his_doc_view_patients.php">View Students</a>
+                                        <a href="his_doc_view_patients.php">View Student Details</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_patient.php">Manage Students</a>
+                                        <a href="his_doc_manage_patient.php">Manage Student Details</a>
                                     </li>
                                     <hr>
                                 </ul>

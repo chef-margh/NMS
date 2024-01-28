@@ -1,10 +1,18 @@
 <?php
-    $prnt_id = $_SESSION['prnt_id'];
-    $prnt_number = $_SESSION['prnt_number'];
-    $ret="SELECT * FROM  his_prnts WHERE prnt_id = ? AND prnt_number = ?";
-    $stmt= $mysqli->prepare($ret) ;
-    $stmt->bind_param('is',$prnt_id, $prnt_number);
+    $pat_id = $_SESSION['pat_id'];
+    $pat_number = $_SESSION['pat_number'];
+    $ret="SELECT * FROM  his_patients WHERE pat_id = ? AND pat_number = ?";
+    $stmt = $mysqli->prepare($ret);
+    if (!$stmt) {
+    // Handle query preparation error
+        echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+    }
+    $stmt->bind_param('is',$pat_id, $pat_number);
     $stmt->execute() ;//ok
+    if (!$stmt->execute()) {
+        // Handle query execution error
+        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
     $res=$stmt->get_result();
     //$cnt=1;
     while($row=$res->fetch_object())

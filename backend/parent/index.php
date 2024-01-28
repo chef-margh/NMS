@@ -1,18 +1,20 @@
 <?php
+    var_dump($_POST);
+    
     session_start();
     include('assets/inc/config.php');//get configuration file
     if(isset($_POST['prnt_login']))
     {
-        $prnt_number = $_POST['prnt_number'];
+        $pat_number = $_POST['pat_number'];
         //$prnt_email = $_POST['prnt_ea']
         $prnt_pwd = sha1(md5($_POST['prnt_pwd']));//double encrypt to increase security
-        $stmt=$mysqli->prepare("SELECT prnt_number, prnt_pwd, pat_id FROM his_patients WHERE  prnt_number=? AND prnt_pwd=? ");//sql to log in user
-        $stmt->bind_param('ss', $prnt_number, $prnt_pwd);//bind fetched parameters
+        $stmt=$mysqli->prepare("SELECT pat_number, prnt_pwd, pat_id FROM his_patients WHERE  pat_number=? AND prnt_pwd=? ");//sql to log in user
+        $stmt->bind_param('ss', $pat_number, $prnt_pwd);//bind fetched parameters
         $stmt->execute();//execute bind
-        $stmt -> bind_result($prnt_number, $prnt_pwd ,$pat_id);//bind result
+        $stmt -> bind_result($pat_number, $prnt_pwd ,$pat_id);//bind result
         $rs=$stmt->fetch();
         $_SESSION['pat_id'] = $pat_id;
-        $_SESSION['prnt_number'] = $prnt_number;//Assign session to prnt_number id
+        $_SESSION['pat_number'] = $pat_number;//Assign session to pat_number id
         //$uip=$_SERVER['REMOTE_ADDR'];
         //$ldate=date('d/m/Y h:i:s', time());
         if($rs)
@@ -94,11 +96,10 @@
                                     <p class="text-muted mb-4 mt-3">Enter your Parent Number and password to access Parent's panel.</p>
                                 </div>
 
-                                <form method='post' >
-
+                                <form method='post'>
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Parent ID</label>
-                                        <input class="form-control" name="prnt_number" type="text" id="emailaddress" required="" placeholder="Enter your parent number">
+                                        <input class="form-control" name="pat_number" type="text" id="emailaddress" required="" placeholder="Enter your parent number">
                                     </div>
 
                                     <div class="form-group mb-3">
@@ -110,7 +111,10 @@
                                         <button class="btn btn-success btn-block" name="prnt_login" type="submit"> Log In </button>
                                     </div>
 
+                                   
                                 </form>
+
+                                    
 
                                 <!--
                                 For Now Lets Disable This 

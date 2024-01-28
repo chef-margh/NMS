@@ -14,13 +14,12 @@
             
             $prnt_fname = $_POST['prnt_fname'];
             $prnt_lname = $_POST['prnt_lname'];
-            $prnt_number = $_POST['prnt_number'];
             $prnt_email = $_POST['prnt_email'];
             $prnt_pwd=sha1(md5($_POST['prnt_pwd']));
             
         
             // sql to insert captured values
-            $query = "INSERT INTO his_patients (pat_fname, pat_lname, pat_number, pat_phone, pat_age, pat_dob, prnt_fname, prnt_lname,  prnt_email, prnt_dpic) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO his_patients (pat_fname, pat_lname, pat_number, pat_phone, pat_age, pat_dob, prnt_fname, prnt_lname,  prnt_email, prnt_pwd, prnt_dpic) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
             // Prepare the statement
             $stmt = $mysqli->prepare($query);
@@ -31,7 +30,7 @@
             }
         
             // Bind parameters to the statement
-            $bindResult = $stmt->bind_param('ssssssssss', $pat_fname, $pat_lname, $pat_number, $pat_phone, $pat_age, $pat_dob, $prnt_fname, $prnt_lname,  $prnt_email, $prnt_dpic);
+            $bindResult = $stmt->bind_param('sssssssssss', $pat_fname, $pat_lname, $pat_number, $pat_phone, $pat_age, $pat_dob, $prnt_fname, $prnt_lname,  $prnt_email, $prnt_pwd, $prnt_dpic);
         
             // Check for bind_param error
             if ($bindResult === false) {
@@ -158,7 +157,7 @@
                                             </div>
                                             <div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="inputCity" class="col-form-label">Parent's Password</label>
+                                                    <label for="inputpassword" class="col-form-label">Parent's Password</label>
                                                     <input required="required" type="password" name="prnt_pwd" class="form-control" id="inputpassword" placeholder = "Guardian's password">
                                                 </div>
                                             </div>
@@ -170,14 +169,7 @@
                                                     <label for="inputZip" class="col-form-label">Student Number</label>
                                                     <input type="text" name="pat_number" value="<?php echo $pat_number;?>" class="form-control" id="inputZip">
                                                 </div>
-                                                <div class="form-group col-md-2" style="display:none">
-                                                    <?php 
-                                                        $length = 5;    
-                                                        $prnt_number =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
-                                                    ?>
-                                                    <label for="inputZip" class="col-form-label">Parent Number</label>
-                                                    <input type="text" name="prnt_number" value="<?php echo $prnt_number;?>" class="form-control" id="inputZip">
-                                                </div>
+                                                
 
                                             <button type="submit" name="add_patient" class="ladda-button btn btn-primary" data-style="expand-right">Add Student</button>
 

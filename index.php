@@ -20,6 +20,16 @@
     <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
     <link rel="stylesheet" href="assets/css/linearicons.css">   
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Set the background image */
+        body {
+            background-image: url('C:\xampp\htdocs\NMS2\assets\images\banner-bg.png');
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Keep the background image fixed while scrolling */
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader Starts -->
