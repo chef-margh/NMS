@@ -3,7 +3,7 @@
   include('assets/inc/config.php');
   include('assets/inc/checklogin.php');
   check_login();
-  $doc_id = $_SESSION['doc_id'];
+  $aid=$_SESSION['ad_id'];
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-            <?php include("assets/inc/sidebar.php");?>
+                <?php include("assets/inc/sidebar.php");?>
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -40,12 +40,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="his_doc_dashboard.php">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="his_doc_patient_lab_test.php">Student's Ailments</a></li>
-                                            <li class="breadcrumb-item active">Student's Ailments</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Report</a></li>
+                                            <li class="breadcrumb-item active">Student Details  </li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Student's Ailment</h4>
+                                    <h4 class="page-title">Student Ailment</h4>
                                 </div>
                             </div>
                         </div>     
@@ -80,10 +80,8 @@
                                                 <th>#</th>
                                                 <th data-toggle="true">Student Name</th>
                                                 <th data-hide="phone">Student Number</th>
-                                               
+                                                <th data-hide="phone">Student Age</th>
                                                 
-                                                
-                                               
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -107,10 +105,9 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
                                                     <td><?php echo $row->pat_number;?></td>
+                                                    <td><?php echo $row->pat_age;?> Years</td>
                                                     
-                                                    
-                                                    
-                                                    <td><a href="his_doc_add_single_lab_test.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Add Ailment</a></td>
+                                                    <td><a href="his_admin_add_single_lab_test.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Add Treatment Report</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>
