@@ -8,12 +8,14 @@
 			$prnt_id=$_SESSION['prnt_id'];
             $prnt_email=$_POST['prnt_email'];
             $pat_phone = $_POST['prnt_email'];
+            $pat_fname=$_POST['pat_fname'];
+            $pat_lname=$_POST['pat_lname'];
            // $prnt_pwd=sha1(md5($_POST['prnt_pwd']));
             $prnt_dpic=$_FILES["prnt_dpic"]["name"];
 		    move_uploaded_file($_FILES["prnt_dpic"]["tmp_name"],"assets/images/users/".$_FILES["prnt_dpic"]["name"]);
 
             //sql to insert captured values
-			$query="UPDATE his_patients SET prnt_fname=?, prnt_lname=?,  prnt_email=?, prnt_dpic=?, pat_phone=? WHERE prnt_id = ?";
+			$query="UPDATE his_patients SET prnt_fname=?, prnt_lname=?,  prnt_email=?, prnt_dpic=?, pat_phone=?, pat_fname=?, pat_lname = ? WHERE prnt_id = ?";
 			$stmt = $mysqli->prepare($query);
             if (!$stmt) {
                 die("Prepare failed: " . $mysqli->error);
@@ -22,7 +24,7 @@
                 echo "Failed to connect to MySQL: " . $mysqli->connect_error;
                 exit();
             }
-			$rc=$stmt->bind_param('sssssi', $prnt_fname, $prnt_lname, $prnt_email, $prnt_dpic, $pat_phone,$prnt_id);
+			$rc=$stmt->bind_param('sssssssi', $prnt_fname, $prnt_lname, $prnt_email, $prnt_dpic, $pat_phone,$pat_fname, $pat_lname,$prnt_id);
 			$stmt->execute();
 			/*
 			
@@ -123,7 +125,7 @@
                                                 <li class="breadcrumb-item active">Profile</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title"><?php echo $row->prnt_fname;?> <?php echo $row->prnt_lname;?>'s Profile</h4>
+                                        <h4 class="page-title"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>'s Profile</h4>
                                         <h4 class ="page-subtitle"><span>Parent Details</span>
                                     </div>
                                 </div>
@@ -139,7 +141,7 @@
                                     
                                     <div class="text-centre mt-3">
                                         
-                                        <p class="text-muted mb-2 font-13"><strong>Parent Full Name :</strong> <span class="ml-2"><?php echo $row->prnt_fname;?> <?php echo $row->prnt_lname;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Student Full Name :</strong> <span class="ml-2"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></span></p>
                                         
                                         <p class="text-muted mb-2 font-13"><strong>Parent Number :</strong> <span class="ml-2"><?php echo $row->prnt_number;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Email ID :</strong> <span class="ml-2"><?php echo $row->prnt_email;?></span></p>
