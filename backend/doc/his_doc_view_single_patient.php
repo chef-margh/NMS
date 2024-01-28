@@ -1,3 +1,4 @@
+User
 <?php
   session_start();
   include('assets/inc/config.php');
@@ -81,30 +82,9 @@
                                         <p class="text-muted mb-2 font-13"><strong>Address :</strong> <span class="ml-2"><?php echo $row->pat_addr;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
-
-
-                                        <?php
-if(isset($_POST['sendAlertBtn'])) {
-    $to = "minecraftparadise007@gmail.com";
-    $subject = "Alert Message";
-    $message = "This is an alert message from the school nurse. Your child has high fever";
-    $headers = "From: vinilsanjeth148@gmail.com"; 
-
-    // Check if the mail is sent successfully
-    if(mail($to, $subject, $message, $headers)) {
-        echo '<script>alert("Alert message sent successfully.");</script>';
-    } else {
-        echo '<script>alert("Error sending alert message.");</script>';
-    }
-}
-?>
-
-<div class="text-right mt-3">
-    <form method="post">
-        <button type="submit" class="btn btn-primary" name="sendAlertBtn">Send Alert Message</button>
-    </form>
-</div>
-
+                                        <div class="text-right mt-3">
+        <button class="btn btn-primary" id="sendAlertBtn">Send Alert Message</button>
+    </div>  
 
                                         
 
@@ -207,4 +187,4 @@ if(isset($_POST['sendAlertBtn'])) {
     </body>
 
 
-</html>
+</html>.
