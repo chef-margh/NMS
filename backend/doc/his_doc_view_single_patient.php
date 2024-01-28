@@ -81,37 +81,30 @@
                                         <p class="text-muted mb-2 font-13"><strong>Address :</strong> <span class="ml-2"><?php echo $row->pat_addr;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
-                                        <div class="text-right mt-3">
-        <button class="btn btn-primary" id="sendAlertBtn">Send Alert Message</button>
-    </div>
 
-    <?php
-    $twilioAccountSid = 'YOUR_TWILIO_ACCOUNT_SID';
-    $twilioAuthToken = 'YOUR_TWILIO_AUTH_TOKEN';
-    $twilioPhoneNumber = 'YOUR_TWILIO_PHONE_NUMBER';
 
-    echo "<script>
-        document.getElementById('sendAlertBtn').addEventListener('click', function() {
-            const patientPhoneNumber = '" . $row->pat_phone . "';
-            const message = 'Alert: Your message content goes here.';
+                                        <?php
+if(isset($_POST['sendAlertBtn'])) {
+    $to = "minecraftparadise007@gmail.com";
+    $subject = "Alert Message";
+    $message = "This is an alert message from the school nurse. Your child has high fever";
+    $headers = "From: vinilsanjeth148@gmail.com"; 
 
-            const twilio = new Twilio.Rest.Client('$twilioAccountSid', '$twilioAuthToken');
+    // Check if the mail is sent successfully
+    if(mail($to, $subject, $message, $headers)) {
+        echo '<script>alert("Alert message sent successfully.");</script>';
+    } else {
+        echo '<script>alert("Error sending alert message.");</script>';
+    }
+}
+?>
 
-            twilio.messages.create({
-                to: patientPhoneNumber,
-                from: '$twilioPhoneNumber',
-                body: message
-            })
-            .then(message => {
-                console.log('SMS sent successfully. SID: ' + message.sid);
-            })
-            .catch(error => {
-                console.error('Error sending SMS: ' + error.message);
-            });
-        });
-      </script>";
-  ?>
-  
+<div class="text-right mt-3">
+    <form method="post">
+        <button type="submit" class="btn btn-primary" name="sendAlertBtn">Send Alert Message</button>
+    </form>
+</div>
+
 
                                         
 
