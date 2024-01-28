@@ -55,8 +55,8 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Students</a></li>
-                                            <li class="breadcrumb-item active">View Students</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
+                                            <li class="breadcrumb-item active">View Patients</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>'s Profile</h4>
@@ -71,20 +71,15 @@
                                     <img src="assets/images/users/patient.png" class="rounded-circle avatar-lg img-thumbnail"
                                         alt="profile-image">
 
-
                                     
                                     <div class="text-left mt-3">
                                         
                                         <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ml-2"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Time of entry :</strong><span class="ml-2"><?php echo $row->pat_phone;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Address :</strong> <span class="ml-2"><?php echo $row->pat_addr;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ml-2"><?php echo $row->pat_phone;?></span></p>
+                                       
                                         <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Ailment :</strong> <span class="ml-2"><?php echo $row->pat_ailment;?></span></p>
                                         <hr>
-                                        <p class="text-muted mb-2 font-13"><strong>Date Recorded :</strong> <span class="ml-2"><?php echo date("d/m/Y - h:m", strtotime($mysqlDateTime));?></span></p>
-                                        <hr>
-                                        
 
 
 
@@ -99,16 +94,7 @@
                             <div class="col-lg-8 col-xl-8">
                                 <div class="card-box">
                                     <ul class="nav nav-pills navtab-bg nav-justified">
-                                        <li class="nav-item">
-                                            <a href="#aboutme" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                                                Prescription
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#timeline" data-toggle="tab" aria-expanded="true" class="nav-link ">
-                                                 Vitals
-                                            </a>
-                                        </li>
+                                        
                                         <li class="nav-item">
                                             <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
                                                 Lab Records
@@ -123,6 +109,11 @@
                                                     $pres_pat_number =$_GET['pat_number'];
                                                     $ret="SELECT  * FROM his_prescriptions WHERE pres_pat_number ='$pres_pat_number'";
                                                     $stmt= $mysqli->prepare($ret) ;
+                                                                                            
+                                                    // Check for prepare error
+                                                    if ($stmt === false) {
+                                                        die('Prepare Error: ' . $mysqli->error);
+                                                    }
                                                     // $stmt->bind_param('i',$pres_pat_number );
                                                     $stmt->execute() ;//ok
                                                     $res=$stmt->get_result();
@@ -145,48 +136,7 @@
                                             </ul>
                                            
                                         </div> <!-- end tab-pane -->
-                                        <!-- end Prescription section content -->
-
-                                        <div class="tab-pane show " id="timeline">
-                                            <div class="table-responsive">
-                                                <table class="table table-borderless mb-0">
-                                                    <thead class="thead-light">
-                                                        <tr>
-                                                            <th>Body Temperature</th>
-                                                            <th>Heart Rate/Pulse</th>
-                                                            <th>Respiratory Rate</th>
-                                                            <th>Blood Pressure</th>
-                                                            <th>Date Recorded</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <?php
-                                                        $vit_pat_number =$_GET['pat_number'];
-                                                        $ret="SELECT  * FROM his_vitals WHERE vit_pat_number ='$vit_pat_number'";
-                                                        $stmt= $mysqli->prepare($ret) ;
-                                                        // $stmt->bind_param('i',$vit_pat_number );
-                                                        $stmt->execute() ;//ok
-                                                        $res=$stmt->get_result();
-                                                        //$cnt=1;
-                                                        
-                                                        while($row=$res->fetch_object())
-                                                            {
-                                                        $mysqlDateTime = $row->vit_daterec; //trim timestamp to date
-
-                                                    ?>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td><?php echo $row->vit_bodytemp;?>°C</td>
-                                                                <td><?php echo $row->vit_heartpulse;?>BPM</td>
-                                                                <td><?php echo $row->vit_resprate;?>bpm</td>
-                                                                <td><?php echo $row->vit_bloodpress;?>mmHg</td>
-                                                                <td><?php echo date("Y-m-d", strtotime($mysqlDateTime));?></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    <?php }?>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <!-- end vitals content-->
+                                        
 
                                         <div class="tab-pane" id="settings">
                                             <ul class="list-unstyled timeline-sm">
@@ -212,18 +162,7 @@
                                                            Laboratory  Tests
                                                         </h5>
                                                         
-                                                        <p class="text-muted mt-2">
-                                                            <?php echo $row->lab_pat_tests;?>
-                                                        </p>
-                                                        <hr>
-                                                        <h5>
-                                                           Laboratory Results
-                                                        </h5>
                                                         
-                                                        <p class="text-muted mt-2">
-                                                            <?php echo $row->lab_pat_results;?>
-                                                        </p>
-                                                        <hr>
 
                                                     </li>
                                                 <?php }?>
@@ -266,13 +205,6 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-
-        <script>
-    document.getElementById('sendAlertBtn').addEventListener('click', function() {
-        alert('Alert message sent!');
-    });
-</script>
-
 
     </body>
 
