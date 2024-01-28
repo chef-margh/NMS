@@ -43,7 +43,7 @@ User
                 //$cnt=1;
                 while($row=$res->fetch_object())
             {
-                $mysqlDateTime = $row->date_rec;
+                
             ?>
             <div class="content-page">
                 <div class="content">
@@ -79,7 +79,6 @@ User
                                         
                                         <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ml-2"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ml-2"><?php echo $row->pat_phone;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Address :</strong> <span class="ml-2"><?php echo $row->pat_addr;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
                                         <div class="text-right mt-3">
@@ -124,10 +123,16 @@ User
                                                     while($row=$res->fetch_object())
                                                         {
                                                     $mysqlDateTime = $row->lab_date_rec; //trim timestamp to date
+                                                   
 
                                                 ?>
                                                     <li class="timeline-sm-item">
+                                                        <span class="timeline-sm-date"><?php echo date("Y-m-d", strtotime($mysqlDateTime));?></span>
                                                         
+                                                        <hr>
+                                                        <h5>
+                                                           Laboratory  Tests
+                                                        </h5>
                                                         
                                                         <p class="text-muted mt-2">
                                                             <?php echo $row->lab_pat_tests;?>
