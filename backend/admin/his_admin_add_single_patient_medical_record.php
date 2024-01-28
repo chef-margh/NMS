@@ -1,42 +1,40 @@
-<!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
-		if(isset($_POST['add_patient_mdr']))
-		{
-			$mdr_pat_name = $_POST['mdr_pat_name'];
-			$mdr_pat_number = $_POST['mdr_pat_number'];
-            //$pres_pat_type = $_POST['pres_pat_type'];
-            $mdr_pat_adr = $_POST['mdr_pat_adr'];
-            $mdr_pat_age = $_POST['mdr_pat_age'];
-            $mdr_number = $_POST['mdr_number'];
-            $mdr_pat_prescr = $_POST['mdr_pat_prescr'];
-            $mdr_pat_ailment = $_POST['mdr_pat_ailment'];
-            //sql to insert captured values
-			$query="INSERT INTO  his_medical_records  (mdr_pat_name, mdr_pat_number, mdr_pat_adr, mdr_pat_age, mdr_number, mdr_pat_prescr, mdr_pat_ailment) VALUES(?,?,?,?,?,?,?)";
-			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sssssss', $mdr_pat_name, $mdr_pat_number, $mdr_pat_adr, $mdr_pat_age, $mdr_number, $mdr_pat_prescr, $mdr_pat_ailment);
-			$stmt->execute();
-			/*
-			
-			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
-			*/ 
-			//declare a varible which will be passed to alert function
-			if($stmt)
-			{
-				$success = "Patient Medical Record Addded";
-			}
-			else {
-				$err = "Please Try Again Or Try Later";
-			}
-			
-			
-		}
+session_start();
+include('assets/inc/config.php');
+
+// Server-side code to handle patient registration
+if (isset($_POST['add_patient_mdr'])) {
+    // Get data from the form
+    $mdr_pat_name = $_POST['mdr_pat_name'];
+    $mdr_pat_number = $_POST['mdr_pat_number'];
+    $mdr_pat_adr = $_POST['mdr_pat_adr'];
+    $mdr_pat_age = $_POST['mdr_pat_age'];
+    $mdr_number = $_POST['mdr_number'];
+    $mdr_pat_prescr = $_POST['mdr_pat_prescr'];
+    $mdr_pat_ailment = $_POST['mdr_pat_ailment'];
+
+    // Prepare and execute the SQL query
+    $query = "INSERT INTO his_medical_records (mdr_pat_name, mdr_pat_number, mdr_pat_adr, mdr_pat_age, mdr_number, mdr_pat_prescr, mdr_pat_ailment) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $mysqli->prepare($query);
+    $stmt->bind_param('sssssss', $mdr_pat_name, $mdr_pat_number, $mdr_pat_adr, $mdr_pat_age, $mdr_number, $mdr_pat_prescr, $mdr_pat_ailment);
+    $success = $stmt->execute();
+
+    // Check if the query was successful
+    if ($success) {
+        $message = "Patient Medical Record Added";
+    } else {
+        $error = "Failed to add patient medical record";
+    }
+}
 ?>
-<!--End Server Side-->
-<!--End Patient Registration-->
+
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurse's Management System</title>
+    <link rel="stylesheet" href="assets/css/bootstrap-4.1.3.min.css">
     
     <!--Head-->
     <?php include('assets/inc/head.php');?>
