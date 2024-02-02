@@ -102,8 +102,7 @@
                                                 <th>#</th>
                                                 <th data-toggle="true">Student Name</th>
                                                 <th data-hide="phone">Student Number</th>
-                                                <th data-hide="phone">Student Address</th>
-                                                <th data-hide="phone">Student Category</th>
+                                                
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -127,8 +126,7 @@
                                                     <td><?php echo $cnt;?></td>
                                                     <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
                                                     <td><?php echo $row->pat_number;?></td>
-                                                    <td><?php echo $row->pat_addr;?></td>
-                                                    <td><?php echo $row->pat_type;?></td>
+                                                    
                                                     
                                                     <td>
                                                        <!-- <a href="his_admin_manage_patient.php?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>-->
